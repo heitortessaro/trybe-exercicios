@@ -1,0 +1,8 @@
+amarelo
+ameixa
+azul
+laranja
+preto
+uva
+vermelho
+violeta
