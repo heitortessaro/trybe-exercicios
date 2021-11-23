@@ -55,7 +55,7 @@ li em {
   font-weight: 600;
 }
 
-#aliados li:nth-of-type(1):hover a {
+/* #aliados li:nth-of-type(1):hover a {
   color: orange;
 }
 
@@ -72,5 +72,27 @@ li em {
 }
 
 #aliados li:nth-of-type(5):hover a {
+  color: green;
+} */
+
+/* outra opção é utilizar o attr selector para filtrar pelo link inserido. Dessa forma a seleção não depende da posição. */
+
+#aliados li a[href*="stackoverflow"] {
+  color: orange;
+}
+
+#aliados li a[href*="w3schools"] {
+  color: green;
+}
+
+#aliados li a[href*="mozilla"] {
+  color: black;
+}
+
+#aliados li a[href*="devdocs"] {
+  color: yellow;
+}
+
+#aliados li a[href*="trybe"] {
   color: green;
 }
