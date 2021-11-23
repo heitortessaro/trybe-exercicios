@@ -1,3 +1,7 @@
+h1 {
+  text-align: center;
+}
+
 .super-mario {
   width: 200px;
   position: absolute;
@@ -34,6 +38,10 @@
   left: 560px;
   top: 240px;
   /* z-index: 2; */
+}
+
+#desenhos {
+  border: 100px solid black;
 }
 
 /* #mario {
