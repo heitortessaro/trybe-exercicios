@@ -1,0 +1,17 @@
+h1,
+p {
+  text-align: center;
+}
+
+li:hover {
+  background-color: green;
+}
+
+li:active {
+  font-style: italic;
+}
+
+ul,
+ol {
+  list-style: none;
+}
