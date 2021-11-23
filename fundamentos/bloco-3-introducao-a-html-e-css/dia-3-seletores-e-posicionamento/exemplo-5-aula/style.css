@@ -42,5 +42,35 @@ li em {
 }
 
 /* Na listagem de linguagens de programação, faça com que as 3 primeiras da lista possuam cor de fonte azul e, se alguma possuir "java*" no texto, utilize uma cor de fundo rosa.  */
+#linguagens :not(:nth-child(n + 4)) {
+  color: blue;
+}
+
+.ping-bg {
+  background-color: pink;
+}
 
 /* (Bônus) Para cada link na lista de aliados da pessoa desenvolvedora, faça com que ao passar o mouse sobre cada um, o texto fique em negrito e assuma a cor de fonte "temática do site"  */
+#aliados:nth-child(n) li:hover {
+  font-weight: 600;
+}
+
+#aliados li:nth-of-type(1):hover a {
+  color: orange;
+}
+
+#aliados li:nth-of-type(2):hover a {
+  color: green;
+}
+
+#aliados li:nth-of-type(3):hover a {
+  color: black;
+}
+
+#aliados li:nth-of-type(4):hover a {
+  color: rgb(133, 133, 1);
+}
+
+#aliados li:nth-of-type(5):hover a {
+  color: green;
+}
