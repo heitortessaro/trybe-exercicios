@@ -1,38 +1,37 @@
-body{
-    font-size: 16px;
-    line-height: 3em;
-  }
-    h1 {
-        font-size: 65px;
-        color: orange;
-        font-family: sans-serif;
-        text-align: center;
-        text-decoration:overline underline;
-        text-shadow: 1px 3px #000;
-    }
-    p {
-      font-weight: 600;
-      font-size: 2em;
-      font-style: italic;
-      text-indent: 60px;
-      white-space:pre-wrap;
-      
-    }
-    ul {
-        background-color: burlywood;
-        color: black;
-        font-weight: 600;
-        text-transform: uppercase;
-    }
-    .backgroundColor{
-        background-color: aqua;
-    }
-    #amarelo{
-      background-color: yellow;
-    }
-    #vermelho{
-        background-color: red;
-    }
-    #marrom {
-      background-color: brown;
-    }
+body {
+  font-size: 16px;
+  line-height: 3em;
+}
+h1 {
+  font-size: 65px;
+  color: orange;
+  font-family: sans-serif;
+  text-align: center;
+  text-decoration: overline underline;
+  text-shadow: 1px 3px #000;
+}
+p {
+  font-weight: 600;
+  font-size: 2em;
+  font-style: italic;
+  text-indent: 60px;
+  white-space: pre-wrap;
+}
+ul {
+  background-color: burlywood;
+  color: black;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.backgroundColor {
+  background-color: aqua;
+}
+#amarelo {
+  background-color: yellow;
+}
+#vermelho {
+  background-color: red;
+}
+#marrom {
+  background-color: brown;
+}
