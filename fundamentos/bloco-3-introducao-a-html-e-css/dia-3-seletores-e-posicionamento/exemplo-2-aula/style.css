@@ -1,0 +1,53 @@
+h1 {
+  text-align: center;
+}
+
+.super-mario {
+  width: 200px;
+  position: absolute;
+  top: 80px;
+  z-index: 1;
+}
+
+.goomba {
+  width: 100px;
+  position: absolute;
+  top: 350px;
+  left: 125px;
+  z-index: 2;
+}
+
+.baloon {
+  position: absolute;
+  left: 300px;
+  top: 100px;
+  z-index: 1;
+}
+
+.speach {
+  font-size: 20px;
+  position: absolute;
+  left: 325px;
+  top: 150px;
+  z-index: 2;
+}
+
+.bowser {
+  width: 300px;
+  position: absolute;
+  left: 560px;
+  top: 240px;
+  /* z-index: 2; */
+}
+
+#desenhos {
+  border: 100px solid black;
+}
+
+/* #mario {
+  float: left;
+}
+
+#bowser {
+  float: right;
+} */
