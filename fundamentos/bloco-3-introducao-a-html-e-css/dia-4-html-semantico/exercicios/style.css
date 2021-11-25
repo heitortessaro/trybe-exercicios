@@ -75,3 +75,24 @@ iframe {
   min-width: 70%;
   height: 400px;
 }
+
+table {
+  margin: auto;
+  width: 300px;
+  background-color: rgb(97, 92, 92);
+  font-weight: 600;
+}
+
+table,
+td,
+th {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  border-collapse: collapse;
+  vertical-align: middle;
+}
+
+th,
+td {
+  padding: 10px;
+}
