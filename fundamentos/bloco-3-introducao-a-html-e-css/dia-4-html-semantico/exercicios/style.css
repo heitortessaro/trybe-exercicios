@@ -1,0 +1,31 @@
+/* * {
+  margin: 0px;
+  padding: 0px;
+} */
+
+body {
+  margin: 2%;
+}
+
+img,
+iframe {
+  display: block;
+  /*tob-botton  left-right */
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
+img {
+  height: 400px;
+  margin: auto;
+  border: 2px solid red;
+}
+
+iframe {
+  height: 400px;
+  width: 600px;
+  border: 2px solid red;
+}
+/* width: auto;
+  margin: auto;
+  border: 2px solid red; */
