@@ -45,8 +45,18 @@ nav ul li {
   display: inline-block;
 }
 
-.menu {
+.menu li {
   text-decoration: none;
+  text-align: center;
+  padding: 10px 20px;
+  border: 2px solid white;
+  margin: 0px 10px;
+  border-radius: 10px;
+}
+
+.menu li:hover {
+  color: blue;
+  background-color: white;
 }
 
 a {
@@ -95,4 +105,10 @@ th {
 th,
 td {
   padding: 10px;
+}
+
+p {
+  margin: 0px 5%;
+  letter-spacing: 1px;
+  line-height: 1.5;
 }
