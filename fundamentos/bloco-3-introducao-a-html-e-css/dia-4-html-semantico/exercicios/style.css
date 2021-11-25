@@ -37,8 +37,15 @@ article {
   margin: auto;
 }
 
-li {
+.referencias li {
   display: block;
+  padding: 10px;
+  font-size: 1.2em;
+}
+
+.referencias li a:hover {
+  color: white;
+  font-weight: 600;
 }
 
 nav ul li {
@@ -52,10 +59,10 @@ nav ul li {
   border: 2px solid white;
   margin: 0px 10px;
   border-radius: 10px;
+  font-weight: 600;
 }
 
 .menu li:hover {
-  color: blue;
   background-color: white;
 }
 
