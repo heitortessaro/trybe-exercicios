@@ -5,6 +5,36 @@
 
 body {
   margin: 2%;
+  background-color: black;
+  color: aliceblue;
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+article {
+  background-color: rgb(75, 74, 74);
+  border-radius: 10px;
+  padding: 10px;
+  width: 80%;
+  margin: auto;
+}
+
+li {
+  display: block;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+.menu {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: brown;
 }
 
 img,
@@ -18,14 +48,9 @@ iframe {
 img {
   height: 400px;
   margin: auto;
-  border: 2px solid red;
 }
 
 iframe {
   height: 400px;
   width: 600px;
-  border: 2px solid red;
 }
-/* width: auto;
-  margin: auto;
-  border: 2px solid red; */
