@@ -63,11 +63,15 @@ iframe {
 }
 
 img {
-  height: 400px;
-  margin: auto;
+  height: auto;
+  max-width: 90%;
 }
 
 iframe {
+  /* height: 400px;
+  width: 600px; */
+  /* max-height: fit-content;
+  max-width: 90%; */
+  min-width: 70%;
   height: 400px;
-  width: 600px;
 }
