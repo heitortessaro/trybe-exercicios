@@ -5,6 +5,7 @@ let baseSalary;
 // salário líquido (base - IR)
 let netSalary;
 
+// INSS
 if (grossSalary <= 1556.94) {
   baseSalary = grossSalary - grossSalary * 0.08;
 } else if (grossSalary <= 2594.92) {
@@ -15,6 +16,7 @@ if (grossSalary <= 1556.94) {
   baseSalary = grossSalary - 570.88;
 }
 
+// IR
 if (baseSalary <= 1903.98) {
   netSalary = baseSalary;
 } else if (baseSalary <= 2826.65) {
