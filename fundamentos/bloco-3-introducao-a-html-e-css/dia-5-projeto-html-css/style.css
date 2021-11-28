@@ -12,6 +12,7 @@ header {
   width: 100%;
   background-color: chocolate;
   font-family: sans-serif;
+  border-bottom: 4px solid black;
 }
 
 h1 {
@@ -85,12 +86,20 @@ img {
 }
 
 #social-links img {
-  height: 30px;
+  height: 35px;
   width: auto;
 }
 
 #social-links ul {
+  padding: 0 30px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#social-links ul li{
   display: inline-block;
+  vertical-align: middle;
+  padding: 0 7%;
 }
 
 aside p {
