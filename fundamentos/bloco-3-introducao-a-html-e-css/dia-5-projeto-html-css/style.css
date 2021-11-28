@@ -84,6 +84,15 @@ img {
   margin: auto;
 }
 
+#social-links img {
+  height: 30px;
+  width: auto;
+}
+
+#social-links ul {
+  display: inline-block;
+}
+
 aside p {
   text-align: center;
   padding: 10px 20px;
