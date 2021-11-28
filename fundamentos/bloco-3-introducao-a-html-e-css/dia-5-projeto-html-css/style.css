@@ -84,6 +84,11 @@ img {
   margin: auto;
 }
 
+aside p {
+  text-align: center;
+  padding: 10px 20px;
+}
+
 .lessons {
   display: inline-block;
   width: 48%;
