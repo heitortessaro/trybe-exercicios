@@ -45,20 +45,39 @@ nav a {
 }
 
 main {
-  margin-top: 154px;
+  display: block;
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+
+#section-left {
+  border: 1px solid black;
+  display: inline-block;
+  border-radius: 10px;
+  vertical-align: top;
+  width: 25%;
+  min-width: 300px;
+}
+
+article {
+  width:70%;
+  margin-left: 4%;
+  display: inline-block;
+  
 }
 
 section {
   padding: 10px;
   border-radius: 20px;
   border: 2px solid gray;
-  margin: 10px 2%;
+  /* margin: 10px 2%; */
 }
 
 img {
   border-radius: 50%;
-  padding: 10px 20px;
-  height: 400px;
+  /* padding: 10px 20px; */
+  height: 250px;
   display: block;
   margin: auto;
 }
@@ -101,6 +120,7 @@ td , th {
 }
 
 footer {
+  margin-top: 10px;
   text-align: center;
   padding: 10px;
   border-top: 4px solid black;
