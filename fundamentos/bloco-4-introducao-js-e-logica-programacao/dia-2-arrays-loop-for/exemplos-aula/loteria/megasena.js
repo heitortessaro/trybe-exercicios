@@ -9,7 +9,14 @@ let userNumbers = [7, 14, 49, 30, 60, 42];
 let result;
 
 for (let index = 0; index < 6; index += 1) {
-  winnerNumbers[index] = Math.floor(Math.random() * 60 + 1);
+  let test = 1;
+  while (test) {
+    let tempNumber = Math.floor(Math.random() * 60 + 1);
+    if (!winnerNumbers.includes(tempNumber)) {
+      winnerNumbers[index] = tempNumber;
+      test = 0;
+    }
+  }
 }
 
 for (let indexUser = 0; indexUser < userNumbers.length; indexUser += 1) {
