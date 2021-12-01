@@ -64,5 +64,3 @@ function checkIfIsTriangle(a, b, c) {
     return 'Some of the angles are not valid (negative)';
   }
 }
-
-console.log(checkIfIsTriangle(60, 60, -60));
