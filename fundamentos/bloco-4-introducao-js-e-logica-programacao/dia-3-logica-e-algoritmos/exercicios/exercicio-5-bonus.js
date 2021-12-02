@@ -16,7 +16,6 @@ if (!(n % 2)) {
 let posicaoCentral = Math.floor(n / 2);
 
 for (let index = 0; index <= posicaoCentral; index += 1) {
-  //   let conteudoTemp = '';
   let conteudo = '';
 
   for (let indexAst = 0; indexAst < index * 2 + 1; indexAst += 1) {
@@ -30,16 +29,6 @@ for (let index = 0; index <= posicaoCentral; index += 1) {
       conteudo = conteudo + '*';
     }
   }
-  //   if (index < posicaoCentral) {
-  //     for (let indexAst = 0; indexAst < conteudo.length; indexAst += 1) {
-  //       if (indexAst === 0 || indexAst === conteudo.length - 1) {
-  //         conteudoTemp = conteudoTemp + '*';
-  //       } else {
-  //         conteudoTemp = conteudoTemp + ' ';
-  //       }
-  //     }
-  //     conteudo = conteudoTemp;
-  //   }
 
   let tamanhoConteudo = conteudo.length;
   if (conteudo.length < n) {
