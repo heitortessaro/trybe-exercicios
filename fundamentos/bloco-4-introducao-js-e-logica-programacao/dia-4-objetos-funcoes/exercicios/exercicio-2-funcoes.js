@@ -1,6 +1,6 @@
 // Crie uma função que receba um array de inteiros e retorne o índice do maior valor.
 
-function indexOfSmallerValue(arrayNumber) {
+function indexOfBiggerValue(arrayNumber) {
   let biggerValeu = arrayNumber[0];
   let indexOfBigger = 0;
   for (let index = 1; index < arrayNumber.length; index += 1) {
@@ -13,5 +13,5 @@ function indexOfSmallerValue(arrayNumber) {
 }
 
 let inputArray = [2, 3, 6, 7, 10, 1, 1];
-let indexBiggerValue = indexOfSmallerValue(inputArray);
+let indexBiggerValue = indexOfBiggerValue(inputArray);
 console.log(indexBiggerValue);

@@ -26,5 +26,6 @@ let wordsArray = [
   'Joana',
   'Joanderson',
 ];
+
 let indexBiggerWord = indexOfBiggerWord(wordsArray);
 console.log(indexBiggerWord);
