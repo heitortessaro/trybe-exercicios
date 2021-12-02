@@ -9,5 +9,4 @@ function returnSumOfNumbers(max) {
 }
 
 let n = 5;
-
 console.log(returnSumOfNumbers(n));
