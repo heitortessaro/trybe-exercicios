@@ -98,7 +98,16 @@
       //   changeToUpperCase('p', 0);
       changeAllToUpperCase('p');
 
-      //
+      // Part 6
+      function printAllToConsole(elementTag) {
+        let selectedElement = document.getElementsByTagName(elementTag);
+        for (let index = 0; index < selectedElement.length; index += 1) {
+          let tempText = selectedElement[index].innerText;
+          console.log(tempText);
+        }
+      }
+
+      printAllToConsole('p');
     </script>
   </body>
 </html>
