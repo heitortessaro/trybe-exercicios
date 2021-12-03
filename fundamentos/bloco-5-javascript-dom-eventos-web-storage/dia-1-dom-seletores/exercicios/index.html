@@ -80,6 +80,25 @@
       // Part 4
       let title = 'Exercício 5.1 - JavaScript';
       changeText('h1', title, 0);
+
+      // Part 5
+      function changeToUpperCase(elementTag, index) {
+        let selectedElement = document.getElementsByTagName(elementTag)[index];
+        selectedElement.innerText = selectedElement.innerText.toUpperCase();
+      }
+
+      function changeAllToUpperCase(elementTag) {
+        let selectedElement = document.getElementsByTagName(elementTag);
+        for (let index = 0; index < selectedElement.length; index += 1) {
+          selectedElement[index].innerText =
+            selectedElement[index].innerText.toUpperCase();
+        }
+      }
+
+      //   changeToUpperCase('p', 0);
+      changeAllToUpperCase('p');
+
+      //
     </script>
   </body>
 </html>
