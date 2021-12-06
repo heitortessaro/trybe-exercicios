@@ -61,4 +61,18 @@ for (let index = 0; index < numeros.length; index += 1) {
 for (let index = 0; index < 3; index += 1) {
   main.appendChild(document.createElement('h3'));
   main.lastElementChild.innerText = `H3 numero ${index + 1}`;
+  main.lastElementChild.classList.add('description');
 }
+
+// -------------------BONUS----------------------
+
+// B1 - Adicione a classe title na tag h1 criada;
+h1.classList.add('title');
+
+// B2 - Adicione a classe description nas 3 tags h3 criadas;
+// add at the moment of creation above
+
+// B3 - Remova a section criado no passo 5 (aquele que possui a classe left-content ). Utilize a função .removeChild() ;
+// B4 - Centralize a section criado no passo 6 (aquele que possui a classe right-content ). Dica: para centralizar, basta configurar o margin-right: auto da section ;
+// B5 - Troque a cor de fundo do elemento pai da section criada no passo 3 (aquela que possui a classe center-content ) para a cor verde;
+// B6 - Remova os dois últimos elementos ( nove e dez ) da lista criada no passo 8.
