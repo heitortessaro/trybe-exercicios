@@ -57,4 +57,8 @@ for (let index = 0; index < numeros.length; index += 1) {
   ul.lastElementChild.innerText = numeros[index];
 }
 
-// Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
+// 9 - Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
+for (let index = 0; index < 3; index += 1) {
+  main.appendChild(document.createElement('h3'));
+  main.lastElementChild.innerText = `H3 numero ${index + 1}`;
+}
