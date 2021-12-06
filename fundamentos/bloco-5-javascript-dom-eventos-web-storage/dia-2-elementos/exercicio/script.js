@@ -82,3 +82,6 @@ rightSection.style.marginRight = 'auto';
 centerSection.parentElement.style.backgroundColor = 'green';
 
 // B6 - Remova os dois últimos elementos ( nove e dez ) da lista criada no passo 8.
+for (let index = 0; index < 2; index += 1) {
+  ul.lastChild.remove();
+}
