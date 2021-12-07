@@ -32,9 +32,15 @@ input.addEventListener('keyup', function () {
   let classElement = document.getElementsByClassName('tech')[0];
   classElement.innerText = input.value;
 });
+
 // 4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
 // redirecione para alguma página;
 // 4.1. Que tal redirecionar para seu portifólio?
+
+// retirado de https://stackoverflow.com/questions/24912299/open-a-new-page-with-dblclick-event-in-javascript
+myWebpage.addEventListener('dblclick', function () {
+  window.open((url = 'https://heitortessaro.github.io/'), (target = '_blank'));
+});
 
 // 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 // a cor do mesmo;
