@@ -58,3 +58,28 @@ function createButton(buttonName, buttonClass, fatherClass) {
 }
 
 createButton('Feriados', 'btn-holiday', 'buttons-container');
+
+// PART 3 --------------------------------------------------------
+// let holidayButton = document.querySelector('.btn-holiday');
+let holidayButton = document.getElementById('btn-holiday');
+holidayButton.addEventListener('click', function () {
+  let holidayList = document.getElementsByClassName('holiday');
+  //   console.log(holidayList[0].style.backgroundColor);
+  if (
+    holidayList[0].style.backgroundColor === 'rgb(238, 238, 238)' ||
+    holidayList[0].style.backgroundColor === ''
+  ) {
+    for (let index = 0; index < holidayList.length; index += 1) {
+      holidayList[index].style.backgroundColor = 'green';
+      holidayList[index].style.color = 'white';
+    }
+  } else {
+    for (let index = 0; index < holidayList.length; index += 1) {
+      holidayList[index].style.backgroundColor = 'rgb(238,238,238)';
+      holidayList[index].style.color = '#666';
+    }
+  }
+
+  //   let color = holidayButton.style.color;
+  //   console.log(holidayList[0].style.backgroundColor);
+});
