@@ -49,11 +49,11 @@ const dezFridayList = [4, 11, 18, 25];
 createDaysOfTheMonth(dezDaysList, dezHolidayList, dezFridayList);
 
 // PART 2 --------------------------------------------------------
-function createButton(buttonName, buttonClass, fatherClass) {
+function createButton(buttonName, buttonId, fatherClass) {
   let tempDiv = document.getElementsByClassName(fatherClass)[0];
   let tempButton = document.createElement('button');
   tempButton.innerText = buttonName;
-  tempButton.id = buttonClass;
+  tempButton.id = buttonId;
   tempDiv.appendChild(tempButton);
 }
 
@@ -82,4 +82,23 @@ holidayButton.addEventListener('click', function () {
 
   //   let color = holidayButton.style.color;
   //   console.log(holidayList[0].style.backgroundColor);
+});
+
+// PART 4 --------------------------------------------------------
+createButton('Sexta-Feira', 'btn-friday', 'buttons-container');
+
+// PART 5 --------------------------------------------------------
+let fridayButton = document.querySelector('#btn-friday');
+fridayButton.addEventListener('click', function () {
+  let fridayList = document.getElementsByClassName('friday');
+  let replacementText = 'Sextou';
+  if (fridayList[0].innerText !== replacementText) {
+    for (let index = 0; index < fridayList.length; index += 1) {
+      fridayList[index].innerText = 'Sextou';
+    }
+  } else {
+    for (let index = 0; index < fridayList.length; index += 1) {
+      fridayList[index].innerText = dezFridayList[index];
+    }
+  }
 });
