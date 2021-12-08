@@ -22,13 +22,13 @@ function createDaysOfTheWeek() {
 createDaysOfTheWeek();
 
 // Escreva seu código abaixo.
+
+// PART 1 --------------------------------------------------------
 function createDaysOfTheMonth(daysList, holidayList, fridayList) {
   const ulDays = document.getElementById('days');
   for (let index = 0; index < daysList.length; index += 1) {
     let tempLi = document.createElement('li');
     tempLi.innerText = daysList[index];
-    // tempLi.classList.add('day');
-    // console.log(holidayList.include() daysList[index]);
     if (holidayList.includes(daysList[index])) {
       tempLi.classList.add('holiday');
     }
@@ -48,4 +48,13 @@ const dezFridayList = [4, 11, 18, 25];
 
 createDaysOfTheMonth(dezDaysList, dezHolidayList, dezFridayList);
 
-// console.log(dezDaysList.includes(dezHolidayList[0]));
+// PART 2 --------------------------------------------------------
+function createButton(buttonName, buttonClass, fatherClass) {
+  let tempDiv = document.getElementsByClassName(fatherClass)[0];
+  let tempButton = document.createElement('button');
+  tempButton.innerText = buttonName;
+  tempButton.id = buttonClass;
+  tempDiv.appendChild(tempButton);
+}
+
+createButton('Feriados', 'btn-holiday', 'buttons-container');
