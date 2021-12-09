@@ -28,6 +28,7 @@ let settings = {
 function updateSettings(event) {
   settings[event.target.id] = event.target.value;
   updateBodyStyle();
+  localStorage.setItem('settings', JSON.stringify(settings));
 }
 
 // --------Event Listeners
@@ -62,26 +63,25 @@ function updateBodyStyle() {
 function initialValues() {
   if (typeof Storage != 'undefined') {
     if (localStorage.settings === undefined) {
-      fontSize.value = settings.fontSize;
-      fontFamily.value = settings.fontFamily;
-      bgColor.value = settings.bgColor;
-      textColor.value = settings.textColor;
-      lineHeight.value = settings.lineHeight;
+      updateElements();
       localStorage.setItem('settings', JSON.stringify(settings));
     } else {
-      console.log(settings);
-      console.log();
       let tempSettings = localStorage.getItem('settings');
       settings = JSON.parse(tempSettings);
-      console.log(settings);
+      updateBodyStyle();
+      updateElements();
     }
   } else {
     console.log('Sem suporte para Web Storage');
     document.write('Sem suporte para Web Storage');
-    fontSize.value = settings.fontSize;
-    fontFamily.value = settings.fontFamily;
-    bgColor.value = settings.bgColor;
-    textColor.value = settings.textColor;
-    lineHeight.value = settings.lineHeight;
+    updateElements();
   }
+}
+
+function updateElements() {
+  fontSize.value = settings.fontSize;
+  fontFamily.value = settings.fontFamily;
+  bgColor.value = settings.bgColor;
+  textColor.value = settings.textColor;
+  lineHeight.value = settings.lineHeight;
 }
