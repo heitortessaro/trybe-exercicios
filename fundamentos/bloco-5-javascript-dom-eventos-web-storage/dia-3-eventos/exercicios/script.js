@@ -29,6 +29,7 @@ function createDaysOfTheMonth(daysList, holidayList, fridayList) {
   for (let index = 0; index < daysList.length; index += 1) {
     let tempLi = document.createElement('li');
     tempLi.innerText = daysList[index];
+    tempLi.classList.add('day');
     if (holidayList.includes(daysList[index])) {
       tempLi.classList.add('holiday');
     }
@@ -102,3 +103,18 @@ fridayButton.addEventListener('click', function () {
     }
   }
 });
+
+// PART 6 --------------------------------------------------------
+let liDays = document.getElementsByClassName('day');
+// console.log(liDays);
+for (let index = 0; index < liDays.length; index += 1) {
+  liDays[index].addEventListener('mouseenter', function (event) {
+    event.target.style.transform = 'scale(1.3)';
+    event.target.style.fontWeight = '600';
+  });
+  liDays[index].addEventListener('mouseleave', function (event) {
+    event.target.style.transform = 'scale(1)';
+    event.target.style.fontWeight = '300';
+  });
+}
+//
