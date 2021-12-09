@@ -117,4 +117,13 @@ for (let index = 0; index < liDays.length; index += 1) {
     event.target.style.fontWeight = '300';
   });
 }
-//
+
+// Part 7 ---------------------------------------------------------
+let btnAddTask = document.getElementById('btn-add-task');
+btnAddTask.addEventListener('click', function () {
+  let tempText = document.getElementById('task-input').value;
+  let tempSpan = document.createElement('span');
+  tempSpan.innerText = tempText;
+  tempSpan.style.display = 'block';
+  document.querySelector('.my-tasks').appendChild(tempSpan);
+});
