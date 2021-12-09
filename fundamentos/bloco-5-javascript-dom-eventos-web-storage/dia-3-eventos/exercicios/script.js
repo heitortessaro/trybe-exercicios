@@ -29,6 +29,7 @@ function createDaysOfTheMonth(daysList, holidayList, fridayList) {
   for (let index = 0; index < daysList.length; index += 1) {
     let tempLi = document.createElement('li');
     tempLi.innerText = daysList[index];
+    tempLi.classList.add('day');
     if (holidayList.includes(daysList[index])) {
       tempLi.classList.add('holiday');
     }
@@ -102,3 +103,16 @@ fridayButton.addEventListener('click', function () {
     }
   }
 });
+
+// PART 6 --------------------------------------------------------
+// Used documentation from https://www.w3schools.com/jsref/event_onmouseenter.asp and its example
+function mouseIn(event) {
+  event.target.style.scale(2, 2);
+}
+
+// let days = document.getElementsByClassName('day');
+// for (let index = 0; index < days.length; index += 1) {
+//   days[index].addEventListener('onmouseenter', mouseIn);
+//   //   days[index].addEventListener('onmouseenter', mouseOut);
+// }
+days.addEventListener('onmouseenter', mouseIn);
