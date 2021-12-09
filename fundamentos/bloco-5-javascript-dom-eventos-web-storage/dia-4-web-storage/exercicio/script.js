@@ -2,7 +2,7 @@ let fontSize = document.getElementById('fontSize');
 let fontFamily = document.getElementById('fontFamily');
 let bgColor = document.getElementById('bgColor');
 let textColor = document.getElementById('textColor');
-let lineHeight = document.getElementById('lineSpacing');
+let lineHeight = document.getElementById('lineHeight');
 
 // add the initial configuration
 // add listenet to elements related to change
@@ -16,13 +16,27 @@ let lineHeight = document.getElementById('lineSpacing');
 //  call the updateBodyStyle
 //  save the alteration on storage
 
+// --------Object with the configuration
+let settings = {
+  fontSize: 18,
+  fontFamily: 'Arial',
+  bgColor: '#000000',
+  textColor: '#ffffff',
+  lineHeight: '1',
+};
+
+function updateSettings(event) {
+  settings[event.target.id] = event.target.value;
+  updateBodyStyle();
+}
+
 // --------Event Listeners
 // inpirado por: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
-fontSize.addEventListener('change', updateBodyStyle);
-fontFamily.addEventListener('change', updateBodyStyle);
-bgColor.addEventListener('change', updateBodyStyle);
-textColor.addEventListener('change', updateBodyStyle);
-lineHeight.addEventListener('change', updateBodyStyle);
+fontSize.addEventListener('change', updateSettings);
+fontFamily.addEventListener('change', updateSettings);
+bgColor.addEventListener('change', updateSettings);
+textColor.addEventListener('change', updateSettings);
+lineHeight.addEventListener('change', updateSettings);
 
 // function saveToTheStorage(){
 //     localStorage.clear();
@@ -35,17 +49,17 @@ window.onload = function () {
 };
 
 function updateBodyStyle() {
-  document.body.style.fontSize = fontSize.value + 'px';
-  document.body.style.fontFamily = fontFamily.value;
-  document.body.style.backgroundColor = bgColor.value;
-  document.body.style.color = textColor.value;
-  document.body.style.lineHeight = parseFloat(lineHeight.value);
+  document.body.style.fontSize = settings.fontSize + 'px';
+  document.body.style.fontFamily = settings.fontFamily;
+  document.body.style.backgroundColor = settings.bgColor;
+  document.body.style.color = settings.textColor;
+  document.body.style.lineHeight = parseFloat(settings.lineHeight);
 }
 
 function initialValues() {
-  fontSize.value = 18;
-  fontFamily.value = 'Arial';
-  bgColor.value = '#000000';
-  textColor.value = '#ffffff';
-  lineHeight.value = '1';
+  fontSize.value = settings.fontSize;
+  fontFamily.value = settings.fontFamily;
+  bgColor.value = settings.bgColor;
+  textColor.value = settings.textColor;
+  lineHeight.value = settings.lineHeight;
 }
