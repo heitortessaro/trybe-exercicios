@@ -56,10 +56,32 @@ function updateBodyStyle() {
   document.body.style.lineHeight = parseFloat(settings.lineHeight);
 }
 
+// function related to the localStorage
+// inspirado no codigo da dinamica do dia 5.4: https://github.com/tryber/exercise-end-block5/blob/master/script.js
+// to load data from local storage, the solution used here was based on the first answer of https://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage
 function initialValues() {
-  fontSize.value = settings.fontSize;
-  fontFamily.value = settings.fontFamily;
-  bgColor.value = settings.bgColor;
-  textColor.value = settings.textColor;
-  lineHeight.value = settings.lineHeight;
+  if (typeof Storage != 'undefined') {
+    if (localStorage.settings === undefined) {
+      fontSize.value = settings.fontSize;
+      fontFamily.value = settings.fontFamily;
+      bgColor.value = settings.bgColor;
+      textColor.value = settings.textColor;
+      lineHeight.value = settings.lineHeight;
+      localStorage.setItem('settings', JSON.stringify(settings));
+    } else {
+      console.log(settings);
+      console.log();
+      let tempSettings = localStorage.getItem('settings');
+      settings = JSON.parse(tempSettings);
+      console.log(settings);
+    }
+  } else {
+    console.log('Sem suporte para Web Storage');
+    document.write('Sem suporte para Web Storage');
+    fontSize.value = settings.fontSize;
+    fontFamily.value = settings.fontFamily;
+    bgColor.value = settings.bgColor;
+    textColor.value = settings.textColor;
+    lineHeight.value = settings.lineHeight;
+  }
 }
