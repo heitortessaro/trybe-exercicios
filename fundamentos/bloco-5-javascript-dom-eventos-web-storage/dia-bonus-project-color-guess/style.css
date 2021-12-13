@@ -32,7 +32,7 @@ body {
 
 #mainColor {
  display: inline-block;
- width: 250px;
+ width: 240px;
  height: 130px;
  border: 1px solid black;
  border-radius: 25px;
@@ -67,7 +67,7 @@ body {
 aside {
  position: relative;
  top: 30px;
- left: 300px; /*for example purposes only*/
+ left: 255px; /*for example purposes only*/
  list-style-type: none;
  margin: 0;
  padding: 0;

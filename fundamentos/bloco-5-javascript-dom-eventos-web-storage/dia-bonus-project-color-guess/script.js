@@ -23,11 +23,18 @@ espacoJogo.appendChild(resposta);
 
 function verificaCor(event) {
  if (event.target.classList.contains('escolha-correta')) {
-  resposta.innerText = 'Acertou!';
+  resposta.innerText = 'Acertou! Parabéns!';
   incrementaPontuacao();
+  // timeout: https://www.w3schools.com/jsref/met_win_settimeout.asp
+  setTimeout(() => {
+   gerenciaJogo();
+  }, 3000);
   return;
  }
  resposta.innerText = 'Errou! Tente novamente!';
+ setTimeout(() => {
+  resposta.innerText = 'Escolha uma cor';
+ }, 2000);
 }
 
 // Requisito 3 - 4 - 5
@@ -78,13 +85,13 @@ function mainDivsColor(mainColors) {
 
 function posiciona(quantidade) {
  // origin: https://codepen.io/dbpas/pen/LGudb
- const tipo = 0.5; //circle type - 1 whole, 0.5 half, 0.25 quarter
- const raio = '150px'; //distance from center
+ const tipo = 1; //circle type - 1 whole, 0.5 half, 0.25 quarter
+ const raio = '170px'; //distance from center
  const start = -90; //shift start from 0
  // $elements = $('li:not(:first-child)'),
  // numberOfElements = (type === 1) ?  $elements.length : $elements.length - 1, //adj for even distro of elements when not full circle
  // const slice = 360 * type / numberOfElements;
- const pedaco = (360 * tipo) / (quantidade - 1);
+ const pedaco = (360 * tipo) / quantidade;
  for (
   let indexPosi = 0;
   indexPosi < asideColors.childElementCount;
@@ -103,7 +110,7 @@ function posiciona(quantidade) {
 }
 
 function adicionaDivsComCor(quantidade) {
- const correta = Math.floor(6 * Math.random());
+ const correta = Math.floor(quantidade * Math.random());
  for (let index = 0; index < quantidade; index += 1) {
   const tempDiv = document.createElement('div');
   tempDiv.classList.add('ball');
@@ -119,7 +126,7 @@ function adicionaDivsComCor(quantidade) {
  posiciona(quantidade);
 }
 
-const numeroOpcoes = 6;
+const numeroOpcoes = 10;
 adicionaDivsComCor(numeroOpcoes);
 
 // Requisito 6
@@ -141,7 +148,7 @@ function gerenciaJogo() {
 
 const iniciaJogo = document.createElement('button');
 iniciaJogo.id = 'reset-game';
-iniciaJogo.innerText = 'Inicia / Reinicia Game';
+iniciaJogo.innerText = 'Novo Jogo';
 iniciaJogo.addEventListener('click', gerenciaJogo);
 espacoJogo.firstElementChild.before(iniciaJogo);
 
