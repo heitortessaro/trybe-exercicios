@@ -105,6 +105,7 @@ fridayButton.addEventListener('click', function () {
 });
 
 // PART 6 --------------------------------------------------------
+exercicios/5.3
 let liDays = document.getElementsByClassName('day');
 // console.log(liDays);
 for (let index = 0; index < liDays.length; index += 1) {
@@ -131,3 +132,16 @@ btnAddTask.addEventListener('click', function () {
     alert('Nenhuma tarefa definida!');
   }
 });
+
+// Used documentation from https://www.w3schools.com/jsref/event_onmouseenter.asp and its example
+function mouseIn(event) {
+  event.target.style.scale(2, 2);
+}
+
+// let days = document.getElementsByClassName('day');
+// for (let index = 0; index < days.length; index += 1) {
+//   days[index].addEventListener('onmouseenter', mouseIn);
+//   //   days[index].addEventListener('onmouseenter', mouseOut);
+// }
+days.addEventListener('onmouseenter', mouseIn);
+main
