@@ -1,13 +1,35 @@
+body {
+ font-family: serif;
+ margin: auto;
+ width: 600px;
+ padding: 50px;
+ text-align: center;
+ /* background-image properties: https://www.w3schools.com/cssref/pr_background-image.asp */
+ background-image: url('/images/rsz_david-pisnoy-46jud4zy1xa-unsplash.jpg');
+ background-position: center;
+ background-repeat: no-repeat; /* Do not repeat the image */
+ background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+#title {
+ text-transform: capitalize;
+ color: white;
+ font-weight: 600;
+ font-size: 45px;
+ text-shadow: 0px 4px 3px black, 0px 8px 13px black, 0px 18px 23px black;
+}
+
 #espaco-jogo {
-  border: 2px solid brown;
-  border-radius: 15px;
+ border: 2px solid brown;
+ border-radius: 15px;
+ padding: 15px;
 }
 
 .ball {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 1px solid black;
-  margin: 0 3px;
+ display: inline-block;
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ border: 1px solid black;
+ margin: 0 3px;
 }
