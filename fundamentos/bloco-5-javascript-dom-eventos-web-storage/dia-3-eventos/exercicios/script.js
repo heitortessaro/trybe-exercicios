@@ -105,6 +105,34 @@ fridayButton.addEventListener('click', function () {
 });
 
 // PART 6 --------------------------------------------------------
+exercicios/5.3
+let liDays = document.getElementsByClassName('day');
+// console.log(liDays);
+for (let index = 0; index < liDays.length; index += 1) {
+  liDays[index].addEventListener('mouseenter', function (event) {
+    event.target.style.transform = 'scale(1.3)';
+    event.target.style.fontWeight = '600';
+  });
+  liDays[index].addEventListener('mouseleave', function (event) {
+    event.target.style.transform = 'scale(1)';
+    event.target.style.fontWeight = '300';
+  });
+}
+
+// Part 7 ---------------------------------------------------------
+let btnAddTask = document.getElementById('btn-add-task');
+btnAddTask.addEventListener('click', function () {
+  let tempText = document.getElementById('task-input').value;
+  if (tempText != '') {
+    let tempSpan = document.createElement('span');
+    tempSpan.innerText = tempText;
+    tempSpan.style.display = 'block';
+    document.querySelector('.my-tasks').appendChild(tempSpan);
+  } else {
+    alert('Nenhuma tarefa definida!');
+  }
+});
+
 // Used documentation from https://www.w3schools.com/jsref/event_onmouseenter.asp and its example
 function mouseIn(event) {
   event.target.style.scale(2, 2);
@@ -116,3 +144,4 @@ function mouseIn(event) {
 //   //   days[index].addEventListener('onmouseenter', mouseOut);
 // }
 days.addEventListener('onmouseenter', mouseIn);
+main
