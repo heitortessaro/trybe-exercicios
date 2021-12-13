@@ -37,7 +37,7 @@ body {
  border: 1px solid black;
  border-radius: 25px;
  position: relative;
- top: 170px;
+ top: 120px;
  background-color: rgba(253, 253, 253, 0.3);
 }
 
@@ -56,9 +56,8 @@ body {
  width: 50px;
  height: 50px;
  border-radius: 50%;
- border: 1px solid white;
- margin: 0 10px;
- cursor: pointer;
+ border: 4px solid white;
+ margin: 0 5px;
 }
 
 /* aside {
@@ -67,7 +66,7 @@ body {
 
 aside {
  position: relative;
- top: 100px;
+ top: 30px;
  left: 300px; /*for example purposes only*/
  list-style-type: none;
  margin: 0;
@@ -80,11 +79,9 @@ aside {
   transition: all 2s linear; */
 }
 
-.ball:hover,
-.ball-help:hover {
- transform: scale(1.1);
- border: 4px double whitesmoke;
- border-style: ;
+.ball:hover {
+ transform: translateY(10px);
+ border: 6px double whitesmoke;
 }
 
 #reset-game {
@@ -100,4 +97,11 @@ aside {
 }
 #reset-game:hover {
  transform: scale(1.1);
+}
+
+p {
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ font-size: 20px;
+ padding: 0px;
+ font-weight: 600;
 }
