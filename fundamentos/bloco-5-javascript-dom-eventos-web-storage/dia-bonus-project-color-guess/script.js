@@ -12,7 +12,8 @@ function randomColor(comRGB) {
  if (comRGB) {
   return `rgb(${randRed}, ${randGreen}, ${randBlue})`;
  }
- return `(${randRed}, ${randGreen}, ${randBlue})`;
+ //  return `(${randRed}, ${randGreen}, ${randBlue})`;
+ return [randRed, randGreen, randBlue];
 }
 
 // Requisito 5
@@ -52,8 +53,37 @@ colorsSec.appendChild(asideColors);
 
 const rgbColorText = document.createElement('p');
 rgbColorText.id = 'rgb-color';
-rgbColorText.innerText = randomColor(false);
+let mainColors = randomColor(false);
+rgbColorText.innerText = `(${mainColors[0]}, ${mainColors[1]}, ${mainColors[2]})`;
+// rgbColorText.innerText = randomColor(false);
 mainColor.appendChild(rgbColorText);
+mainDivsColor(mainColors);
+
+function mainDivsColor(mainColors) {
+ while (mainColor.childElementCount > 1) {
+  mainColor.lastElementChild.remove();
+ }
+ for (let index = 0; index < 3; index += 1) {
+  const tempDiv = document.createElement('div');
+  tempDiv.classList.add('ball');
+  switch (index) {
+   case 0:
+    tempDiv.style.backgroundColor = `rgb(${mainColors[index]},0,0)`;
+    mainColor.appendChild(tempDiv);
+    break;
+   case 1:
+    tempDiv.style.backgroundColor = `rgb(0,${mainColors[index]},0)`;
+    mainColor.appendChild(tempDiv);
+    break;
+   case 2:
+    tempDiv.style.backgroundColor = `rgb(0,0,${mainColors[index]})`;
+    mainColor.appendChild(tempDiv);
+    break;
+   default:
+    break;
+  }
+ }
+}
 
 function adicionaDivsComCor(quantidade) {
  const correta = Math.floor(6 * Math.random());
@@ -82,7 +112,10 @@ function removeDivs() {
 }
 
 function gerenciaJogo() {
- rgbColorText.innerText = randomColor(false);
+ mainColors = randomColor(false);
+ mainDivsColor(mainColors);
+ rgbColorText.innerText = `(${mainColors[0]}, ${mainColors[1]}, ${mainColors[2]})`;
+ //  rgbColorText.innerText = randomColor(false);
  removeDivs();
  adicionaDivsComCor(numeroOpcoes);
  resposta.innerText = 'Escolha uma cor';
