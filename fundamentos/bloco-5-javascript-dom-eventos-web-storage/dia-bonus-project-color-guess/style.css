@@ -1,0 +1,107 @@
+body {
+ font-family: serif;
+ margin: auto;
+ width: 600px;
+ padding: 50px;
+ text-align: center;
+ /* background-image properties: https://www.w3schools.com/cssref/pr_background-image.asp */
+ background-image: url('/images/rsz_david-pisnoy-46jud4zy1xa-unsplash.jpg');
+ background-position: center;
+ background-repeat: no-repeat; /* Do not repeat the image */
+ background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+#title {
+ text-transform: capitalize;
+ color: white;
+ font-weight: 600;
+ font-size: 45px;
+ /* 3 shadowns effect: https://designshack.net/articles/css/12-fun-css-text-shadows-you-can-copy-and-paste/ */
+ text-shadow: 0px 4px 3px black, 0px 8px 13px black, 0px 18px 23px black;
+}
+
+#espaco-jogo {
+ border: 4px solid whitesmoke;
+ border-radius: 15px;
+ padding: 15px;
+ background: rgba(48, 49, 48, 0.3);
+ height: 550px;
+ /* background-color: antiquewhite; */
+ /* opacity: 0.5; */
+}
+
+#mainColor {
+ display: inline-block;
+ width: 240px;
+ height: 130px;
+ border: 1px solid black;
+ border-radius: 25px;
+ position: relative;
+ top: 120px;
+ background-color: rgba(253, 253, 253, 0.3);
+}
+
+.ball {
+ /* display: inline-block; */
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ border: 1px solid black;
+ cursor: pointer;
+ /* margin: 0 5px; */
+}
+
+.ball-help {
+ display: inline-block;
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ border: 4px solid white;
+ margin: 0 5px;
+}
+
+/* aside {
+ float: right;
+} */
+
+aside {
+ position: relative;
+ top: 30px;
+ left: 255px; /*for example purposes only*/
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+}
+.ball {
+ position: absolute;
+ /*     -webkit-transition: all 2s linear;
+  -moz-transition: all 2s linear;
+  transition: all 2s linear; */
+}
+
+.ball:hover {
+ transform: translateY(10px);
+ border: 6px double whitesmoke;
+}
+
+#reset-game {
+ font-size: 20px;
+ padding: 5px 10px;
+ margin: 0px;
+ font-weight: 600;
+ background-color: black;
+ color: aliceblue;
+ border-radius: 15px;
+ border: 0px;
+ cursor: pointer;
+}
+#reset-game:hover {
+ transform: scale(1.1);
+}
+
+p {
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ font-size: 20px;
+ padding: 0px;
+ font-weight: 600;
+}
