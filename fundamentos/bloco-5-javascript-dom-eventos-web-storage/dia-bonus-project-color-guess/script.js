@@ -85,6 +85,32 @@ function mainDivsColor(mainColors) {
  }
 }
 
+function posiciona(quantidade) {
+ // origin: https://codepen.io/dbpas/pen/LGudb
+ const tipo = 0.5; //circle type - 1 whole, 0.5 half, 0.25 quarter
+ const raio = '150px'; //distance from center
+ const start = -90; //shift start from 0
+ // $elements = $('li:not(:first-child)'),
+ // numberOfElements = (type === 1) ?  $elements.length : $elements.length - 1, //adj for even distro of elements when not full circle
+ // const slice = 360 * type / numberOfElements;
+ const pedaco = (360 * tipo) / (quantidade - 1);
+ for (
+  let indexPosi = 0;
+  indexPosi < asideColors.childElementCount;
+  indexPosi += 1
+ ) {
+  let rotate = pedaco * indexPosi + start;
+  let rotateReverse = rotate * -1;
+  asideColors.children[
+   indexPosi
+  ].style.transform = `rotate(${rotate}deg) translate(${raio}) rotate(${rotateReverse}deg)`;
+  // asideColors.children[indexPosi].style.transform = `translate(${raio})`;
+  // asideColors.children[
+  //  indexPosi
+  // ].style.transform = `rotate(${rotateReverse}deg)`;
+ }
+}
+
 function adicionaDivsComCor(quantidade) {
  const correta = Math.floor(6 * Math.random());
  for (let index = 0; index < quantidade; index += 1) {
@@ -99,6 +125,7 @@ function adicionaDivsComCor(quantidade) {
   tempDiv.addEventListener('click', verificaCor);
   asideColors.appendChild(tempDiv);
  }
+ posiciona(quantidade);
 }
 
 const numeroOpcoes = 6;

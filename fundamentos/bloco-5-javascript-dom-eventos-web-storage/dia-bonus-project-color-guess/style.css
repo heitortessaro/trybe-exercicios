@@ -31,12 +31,12 @@ body {
 }
 
 .ball {
- display: inline-block;
+ /* display: inline-block; */
  width: 50px;
  height: 50px;
  border-radius: 50%;
  border: 1px solid black;
- margin: 0 5px;
+ /* margin: 0 5px; */
 }
 
 .ball-help {
@@ -57,3 +57,18 @@ body {
 /* aside {
  float: right;
 } */
+
+aside {
+ position: relative;
+ top: 100px;
+ left: 100px; /*for example purposes only*/
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+}
+.ball {
+ position: absolute;
+ /*     -webkit-transition: all 2s linear;
+  -moz-transition: all 2s linear;
+  transition: all 2s linear; */
+}
