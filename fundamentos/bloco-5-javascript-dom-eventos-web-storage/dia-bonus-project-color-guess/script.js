@@ -16,16 +16,6 @@ function randomColor(comRGB) {
  return [randRed, randGreen, randBlue];
 }
 
-// Requisito 5
-// método string includes: https://www.w3schools.com/jsref/jsref_includes.asp
-// function verificaCor(event) {
-//   const divColor = event.target.style.backgroundColor;
-//   if (divColor.includes(rgbColorText)) {
-//     console.log('correto');
-//     return;
-//   }
-//   console.log('incorreto');
-// }
 const resposta = document.createElement('p');
 resposta.id = 'answer';
 resposta.innerText = 'Escolha uma cor';
@@ -46,6 +36,7 @@ colorsSec.id = 'secao-cores-apresentadas';
 espacoJogo.appendChild(colorsSec);
 
 const mainColor = document.createElement('div');
+mainColor.id = 'mainColor';
 colorsSec.appendChild(mainColor);
 
 const asideColors = document.createElement('aside');

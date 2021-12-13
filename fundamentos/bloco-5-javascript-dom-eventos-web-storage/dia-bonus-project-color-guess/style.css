@@ -24,10 +24,21 @@ body {
  border: 4px solid whitesmoke;
  border-radius: 15px;
  padding: 15px;
- background: rgba(195, 223, 196, 0.3);
- height: 400px;
+ background: rgba(48, 49, 48, 0.3);
+ height: 550px;
  /* background-color: antiquewhite; */
  /* opacity: 0.5; */
+}
+
+#mainColor {
+ display: inline-block;
+ width: 250px;
+ height: 130px;
+ border: 1px solid black;
+ border-radius: 25px;
+ position: relative;
+ top: 170px;
+ background-color: rgba(253, 253, 253, 0.3);
 }
 
 .ball {
@@ -36,6 +47,7 @@ body {
  height: 50px;
  border-radius: 50%;
  border: 1px solid black;
+ cursor: pointer;
  /* margin: 0 5px; */
 }
 
@@ -44,14 +56,9 @@ body {
  width: 50px;
  height: 50px;
  border-radius: 50%;
- border: 1px solid black;
+ border: 1px solid white;
  margin: 0 10px;
-}
-
-.ball:hover,
-.ball-help:hover {
- transform: scale(1.2);
- border: 2px solid whitesmoke;
+ cursor: pointer;
 }
 
 /* aside {
@@ -61,7 +68,7 @@ body {
 aside {
  position: relative;
  top: 100px;
- left: 100px; /*for example purposes only*/
+ left: 300px; /*for example purposes only*/
  list-style-type: none;
  margin: 0;
  padding: 0;
@@ -71,4 +78,26 @@ aside {
  /*     -webkit-transition: all 2s linear;
   -moz-transition: all 2s linear;
   transition: all 2s linear; */
+}
+
+.ball:hover,
+.ball-help:hover {
+ transform: scale(1.1);
+ border: 4px double whitesmoke;
+ border-style: ;
+}
+
+#reset-game {
+ font-size: 20px;
+ padding: 5px 10px;
+ margin: 0px;
+ font-weight: 600;
+ background-color: black;
+ color: aliceblue;
+ border-radius: 15px;
+ border: 0px;
+ cursor: pointer;
+}
+#reset-game:hover {
+ transform: scale(1.1);
 }
