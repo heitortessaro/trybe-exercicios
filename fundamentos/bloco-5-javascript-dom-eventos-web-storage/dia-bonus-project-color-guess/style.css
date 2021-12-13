@@ -16,13 +16,17 @@ body {
  color: white;
  font-weight: 600;
  font-size: 45px;
+ /* 3 shadowns effect: https://designshack.net/articles/css/12-fun-css-text-shadows-you-can-copy-and-paste/ */
  text-shadow: 0px 4px 3px black, 0px 8px 13px black, 0px 18px 23px black;
 }
 
 #espaco-jogo {
- border: 2px solid brown;
+ border: 4px solid whitesmoke;
  border-radius: 15px;
  padding: 15px;
+ background: rgba(195, 223, 196, 0.3);
+ /* background-color: antiquewhite; */
+ /* opacity: 0.5; */
 }
 
 .ball {
