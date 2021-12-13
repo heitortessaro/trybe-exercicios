@@ -65,7 +65,7 @@ function mainDivsColor(mainColors) {
  }
  for (let index = 0; index < 3; index += 1) {
   const tempDiv = document.createElement('div');
-  tempDiv.classList.add('ball');
+  tempDiv.classList.add('ball-help');
   switch (index) {
    case 0:
     tempDiv.style.backgroundColor = `rgb(${mainColors[index]},0,0)`;
