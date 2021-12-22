@@ -82,6 +82,12 @@ const fonts = [
 // adiciona uma classe aleatoria a cada span
 // faz o append no outputText
 
+function selectRandonFontSize(max, min) {
+ const delta = max - min;
+ const fontSize = Math.floor(delta * Math.random() + min);
+ return `${fontSize}px`;
+}
+
 function counterWords() {
  const numberWords = outputText.childElementCount;
  wordCounter.innerText = `${numberWords}`;
@@ -101,6 +107,7 @@ function changeStyle(event) {
  element.classList.add(trasnfRott[selectRandom(trasnfRott.length)]);
  element.classList.add(transfSkew[selectRandom(transfSkew.length)]);
  element.style.fontFamily = fonts[selectRandom(fonts.length)];
+ element.style.fontSize = selectRandonFontSize(45, 15);
 }
 
 function checkEmptyInput(text) {
@@ -135,6 +142,7 @@ function generateSpans(inputArray) {
   tempSpan.classList.add(trasnfRott[selectRandom(trasnfRott.length)]);
   tempSpan.classList.add(transfSkew[selectRandom(transfSkew.length)]);
   tempSpan.style.fontFamily = fonts[selectRandom(fonts.length)];
+  tempSpan.style.fontSize = selectRandonFontSize(45, 15);
   tempSpan.addEventListener('click', changeStyle);
   outputText.append(tempSpan);
  }
