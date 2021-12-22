@@ -47,6 +47,29 @@ const size = ['medium', 'big', 'reallybig'];
 const trasnfRott = ['rotateleft', 'rotateright'];
 const transfSkew = ['skewleft', 'skewright'];
 
+const fonts = [
+ 'Courier New',
+ 'Courier',
+ 'monospace',
+ 'Franklin Gothic Medium',
+ 'Arial Narrow',
+ 'Arial',
+ 'sans-serif',
+ 'Gill Sans',
+ 'Gill Sans MT',
+ 'Calibri',
+ 'Trebuchet MS',
+ 'Lucida Sans',
+ 'Lucida Sans Regular',
+ 'Lucida Grande',
+ 'Lucida Sans Unicode',
+ 'Geneva',
+ 'Verdana',
+ 'Times New Roman',
+ 'Times',
+ 'serif',
+];
+
 // functions
 
 // passos req 3:
@@ -58,74 +81,77 @@ const transfSkew = ['skewleft', 'skewright'];
 // adiciona o texto da posicao do array ao span
 // adiciona uma classe aleatoria a cada span
 // faz o append no outputText
+
 function counterWords() {
-  const numberWords = outputText.childElementCount;
-  wordCounter.innerText = `${numberWords}`;
+ const numberWords = outputText.childElementCount;
+ wordCounter.innerText = `${numberWords}`;
 }
 
 function selectRandom(max) {
-  const position = Math.floor(max * Math.random());
-  return position;
+ const position = Math.floor(max * Math.random());
+ return position;
 }
 
 function changeStyle(event) {
-  const element = event.target;
-  element.className = '';
-  //   element.classList.add('word');
-  element.classList.add(color[selectRandom(color.length)]);
-  element.classList.add(size[selectRandom(size.length)]);
-  element.classList.add(trasnfRott[selectRandom(trasnfRott.length)]);
-  element.classList.add(transfSkew[selectRandom(transfSkew.length)]);
+ const element = event.target;
+ element.className = '';
+ //   element.classList.add('word');
+ element.classList.add(color[selectRandom(color.length)]);
+ element.classList.add(size[selectRandom(size.length)]);
+ element.classList.add(trasnfRott[selectRandom(trasnfRott.length)]);
+ element.classList.add(transfSkew[selectRandom(transfSkew.length)]);
+ element.style.fontFamily = fonts[selectRandom(fonts.length)];
 }
 
 function checkEmptyInput(text) {
-  if (text === '') {
-    return true;
-  }
-  return false;
+ if (text === '') {
+  return true;
+ }
+ return false;
 }
 
 function checkOnlySpaces(inputArray) {
-  for (let index = 0; index < inputArray.length; index += 1) {
-    if (inputArray[index] !== '') {
-      return false;
-    }
+ for (let index = 0; index < inputArray.length; index += 1) {
+  if (inputArray[index] !== '') {
+   return false;
   }
-  return true;
+ }
+ return true;
 }
 
 function removeSpans() {
-  while (outputText.lastChild) {
-    outputText.lastChild.remove();
-  }
+ while (outputText.lastChild) {
+  outputText.lastChild.remove();
+ }
 }
 
 function generateSpans(inputArray) {
-  for (let index = 0; index < inputArray.length; index += 1) {
-    const tempSpan = document.createElement('span');
-    tempSpan.innerText = inputArray[index];
-    // tempSpan.classList.add('word');
-    tempSpan.classList.add(color[selectRandom(color.length)]);
-    tempSpan.classList.add(size[selectRandom(size.length)]);
-    tempSpan.classList.add(trasnfRott[selectRandom(trasnfRott.length)]);
-    tempSpan.classList.add(transfSkew[selectRandom(transfSkew.length)]);
-    tempSpan.addEventListener('click', changeStyle);
-    outputText.append(tempSpan);
-  }
+ for (let index = 0; index < inputArray.length; index += 1) {
+  const tempSpan = document.createElement('span');
+  tempSpan.innerText = inputArray[index];
+  // tempSpan.classList.add('word');
+  tempSpan.classList.add(color[selectRandom(color.length)]);
+  tempSpan.classList.add(size[selectRandom(size.length)]);
+  tempSpan.classList.add(trasnfRott[selectRandom(trasnfRott.length)]);
+  tempSpan.classList.add(transfSkew[selectRandom(transfSkew.length)]);
+  tempSpan.style.fontFamily = fonts[selectRandom(fonts.length)];
+  tempSpan.addEventListener('click', changeStyle);
+  outputText.append(tempSpan);
+ }
 }
 
 // split method https://www.w3schools.com/jsref/jsref_split.asp
 function handleInputText() {
-  const tempText = inputText.value;
-  const textArray = tempText.split(' ');
-  if (checkEmptyInput(tempText) || checkOnlySpaces(textArray)) {
-    outputText.innerText = 'Por favor, digite o conteúdo da carta.';
-    return;
-  }
-  outputText.innerText = '';
-  removeSpans();
-  generateSpans(textArray);
-  counterWords();
+ const tempText = inputText.value;
+ const textArray = tempText.split(' ');
+ if (checkEmptyInput(tempText) || checkOnlySpaces(textArray)) {
+  outputText.innerText = 'Por favor, digite o conteúdo da carta.';
+  return;
+ }
+ outputText.innerText = '';
+ removeSpans();
+ generateSpans(textArray);
+ counterWords();
 }
 
 // add events
