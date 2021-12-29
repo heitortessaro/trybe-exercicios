@@ -80,6 +80,8 @@ const backgroundImages = [
  'pink-pattern.png',
 ];
 
+const fontWeight = ['300', '600', '900'];
+
 // functions
 
 // passos req 3:
@@ -124,6 +126,7 @@ function changeStyle(event) {
  element.style.fontFamily = fonts[selectRandom(fonts.length)];
  element.style.fontSize = selectRandonFontSize(45, 15);
  element.style.backgroundImage = selectBackgroundImage();
+ tempSpan.style.fontWeight = fontWeight[selectRandom(fontWeight.length)];
 }
 
 function checkEmptyInput(text) {
@@ -160,6 +163,7 @@ function generateSpans(inputArray) {
   tempSpan.style.fontFamily = fonts[selectRandom(fonts.length)];
   tempSpan.style.fontSize = selectRandonFontSize(45, 15);
   tempSpan.style.backgroundImage = selectBackgroundImage();
+  tempSpan.style.fontWeight = fontWeight[selectRandom(fontWeight.length)];
   tempSpan.addEventListener('click', changeStyle);
   outputText.append(tempSpan);
  }

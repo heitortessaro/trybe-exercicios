@@ -8,14 +8,14 @@ span {
 .newspaper {
  /* background-color: antiquewhite; */
  /* font-family: 'Times New Roman', Times, serif; */
- font-weight: bold;
+ /* font-weight: bold; */
 }
 
 .magazine1 {
  /* background-color: teal; */
  /* color: white; */
  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
- font-weight: 900;
+ /* font-weight: 900; */
  text-transform: uppercase;
 }
 
@@ -24,7 +24,7 @@ span {
  /* background-image: url('/images/jornal-01.jpg'); */
  /* color: white; */
  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
- font-weight: 900;
+ /* font-weight: 900; */
 }
 
 .medium {
