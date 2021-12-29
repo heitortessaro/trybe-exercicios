@@ -100,6 +100,12 @@ function selectRandonFontSize(max, min) {
  return `${fontSize}px`;
 }
 
+function selectRandonPadding(max, min) {
+ const delta = max - min;
+ const paddingSize = Math.floor(delta * Math.random() + min);
+ return `${paddingSize}px`;
+}
+
 function counterWords() {
  const numberWords = outputText.childElementCount;
  wordCounter.innerText = `${numberWords}`;
@@ -125,6 +131,7 @@ function changeStyle(event) {
  element.classList.add(transfSkew[selectRandom(transfSkew.length)]);
  element.style.fontFamily = fonts[selectRandom(fonts.length)];
  element.style.fontSize = selectRandonFontSize(45, 15);
+ element.style.padding = selectRandonPadding(20, 8);
  element.style.backgroundImage = selectBackgroundImage();
  tempSpan.style.fontWeight = fontWeight[selectRandom(fontWeight.length)];
 }
@@ -162,6 +169,7 @@ function generateSpans(inputArray) {
   tempSpan.classList.add(transfSkew[selectRandom(transfSkew.length)]);
   tempSpan.style.fontFamily = fonts[selectRandom(fonts.length)];
   tempSpan.style.fontSize = selectRandonFontSize(45, 15);
+  tempSpan.style.padding = selectRandonPadding(20, 8);
   tempSpan.style.backgroundImage = selectBackgroundImage();
   tempSpan.style.fontWeight = fontWeight[selectRandom(fontWeight.length)];
   tempSpan.addEventListener('click', changeStyle);
