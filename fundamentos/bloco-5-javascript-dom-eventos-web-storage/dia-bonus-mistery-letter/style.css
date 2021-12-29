@@ -6,22 +6,23 @@ span {
 }
 
 .newspaper {
- background-color: antiquewhite;
+ /* background-color: antiquewhite; */
  /* font-family: 'Times New Roman', Times, serif; */
  font-weight: bold;
 }
 
 .magazine1 {
- background-color: teal;
- color: white;
+ /* background-color: teal; */
+ /* color: white; */
  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
  font-weight: 900;
  text-transform: uppercase;
 }
 
 .magazine2 {
- background-image: url('/images/pink-pattern.png');
- color: fuchsia;
+ /* background-image: url('/images/pink-pattern.png'); */
+ /* background-image: url('/images/jornal-01.jpg'); */
+ /* color: white; */
  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
  font-weight: 900;
 }

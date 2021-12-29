@@ -70,6 +70,16 @@ const fonts = [
  'serif',
 ];
 
+const backgroundImages = [
+ 'jornal-01.jpg',
+ 'jornal-02.jpg',
+ 'jornal-03.jpg',
+ 'jornal-04.jpg',
+ 'paper-01.jpg',
+ 'paper-02.jpeg',
+ 'pink-pattern.png',
+];
+
 // functions
 
 // passos req 3:
@@ -98,6 +108,11 @@ function selectRandom(max) {
  return position;
 }
 
+function selectBackgroundImage() {
+ const img = backgroundImages[selectRandom(backgroundImages.length)];
+ return "url('./images/" + img + "')";
+}
+
 function changeStyle(event) {
  const element = event.target;
  element.className = '';
@@ -108,6 +123,7 @@ function changeStyle(event) {
  element.classList.add(transfSkew[selectRandom(transfSkew.length)]);
  element.style.fontFamily = fonts[selectRandom(fonts.length)];
  element.style.fontSize = selectRandonFontSize(45, 15);
+ element.style.backgroundImage = selectBackgroundImage();
 }
 
 function checkEmptyInput(text) {
@@ -143,6 +159,7 @@ function generateSpans(inputArray) {
   tempSpan.classList.add(transfSkew[selectRandom(transfSkew.length)]);
   tempSpan.style.fontFamily = fonts[selectRandom(fonts.length)];
   tempSpan.style.fontSize = selectRandonFontSize(45, 15);
+  tempSpan.style.backgroundImage = selectBackgroundImage();
   tempSpan.addEventListener('click', changeStyle);
   outputText.append(tempSpan);
  }
