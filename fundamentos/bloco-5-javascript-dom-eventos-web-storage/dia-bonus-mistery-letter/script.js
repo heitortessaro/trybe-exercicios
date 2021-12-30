@@ -114,6 +114,12 @@ function selectRandonSkewX(max, min) {
  return `skewX(${skew}deg)`;
 }
 
+function selectRandonRotation(max, min) {
+ const delta = max - min;
+ const rotation = Math.floor(delta * Math.random() + min);
+ return `rotate(${rotation}deg)`;
+}
+
 function counterWords() {
  const numberWords = outputText.childElementCount;
  wordCounter.innerText = `${numberWords}`;
@@ -139,7 +145,8 @@ function changeStyle(event) {
  element.style.fontWeight = fontWeight[selectRandom(fontWeight.length)];
  element.style.textTransform =
   textTransform[selectRandom(textTransform.length)];
- element.style.transform = selectRandonSkewX(15, -15);
+ element.style.transform =
+  selectRandonSkewX(15, -15) + selectRandonRotation(5, -5);
 }
 
 function checkEmptyInput(text) {
@@ -175,7 +182,8 @@ function generateSpans(inputArray) {
   tempSpan.style.fontWeight = fontWeight[selectRandom(fontWeight.length)];
   tempSpan.style.textTransform =
    textTransform[selectRandom(textTransform.length)];
-  tempSpan.style.transform = selectRandonSkewX(20, -20);
+  tempSpan.style.transform =
+   selectRandonSkewX(20, -20) + selectRandonRotation(5, -5);
   tempSpan.addEventListener('click', changeStyle);
   outputText.append(tempSpan);
  }
