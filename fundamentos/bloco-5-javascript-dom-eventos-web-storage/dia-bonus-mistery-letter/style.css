@@ -1,3 +1,17 @@
+/* Resourses related to the transition effect and opacity:
+https://stackoverflow.com/questions/10995165/what-is-the-opposite-of-hover-on-mouse-leave
+https://www.sitepoint.com/hide-elements-in-css/
+ */
+
 span {
  display: inline-block;
+ /* display: none; */
+ /* visibility: hidden; */
+ opacity: 2%;
+ transition: opacity 2.5s;
+}
+
+span:hover {
+ opacity: 100%;
+ transition: opacity 0.25s;
 }
