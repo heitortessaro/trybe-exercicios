@@ -44,8 +44,8 @@ main.appendChild(wordCounter);
 
 // const color = ['newspaper', 'magazine1', 'magazine2'];
 // const size = ['medium', 'big', 'reallybig'];
-const trasnfRott = ['rotateleft', 'rotateright'];
-const transfSkew = ['skewleft', 'skewright'];
+// const trasnfRott = ['rotateleft', 'rotateright'];
+// const transfSkew = ['skewleft', 'skewright'];
 
 const fonts = [
  'Courier New',
@@ -108,6 +108,12 @@ function selectRandonPadding(max, min) {
  return `${paddingSize}px`;
 }
 
+function selectRandonSkewX(max, min) {
+ const delta = max - min;
+ const skew = Math.floor(delta * Math.random() + min);
+ return `skewX(${skew}deg)`;
+}
+
 function counterWords() {
  const numberWords = outputText.childElementCount;
  wordCounter.innerText = `${numberWords}`;
@@ -126,11 +132,6 @@ function selectBackgroundImage() {
 function changeStyle(event) {
  const element = event.target;
  element.className = '';
- //   element.classList.add('word');
- //  element.classList.add(color[selectRandom(color.length)]);
- //  element.classList.add(size[selectRandom(size.length)]);
- element.classList.add(trasnfRott[selectRandom(trasnfRott.length)]);
- element.classList.add(transfSkew[selectRandom(transfSkew.length)]);
  element.style.fontFamily = fonts[selectRandom(fonts.length)];
  element.style.fontSize = selectRandonFontSize(45, 15);
  element.style.padding = selectRandonPadding(20, 8);
@@ -138,6 +139,7 @@ function changeStyle(event) {
  element.style.fontWeight = fontWeight[selectRandom(fontWeight.length)];
  element.style.textTransform =
   textTransform[selectRandom(textTransform.length)];
+ element.style.transform = selectRandonSkewX(15, -15);
 }
 
 function checkEmptyInput(text) {
@@ -166,11 +168,6 @@ function generateSpans(inputArray) {
  for (let index = 0; index < inputArray.length; index += 1) {
   const tempSpan = document.createElement('span');
   tempSpan.innerText = inputArray[index];
-  // tempSpan.classList.add('word');
-  //   tempSpan.classList.add(color[selectRandom(color.length)]);
-  //   tempSpan.classList.add(size[selectRandom(size.length)]);
-  tempSpan.classList.add(trasnfRott[selectRandom(trasnfRott.length)]);
-  tempSpan.classList.add(transfSkew[selectRandom(transfSkew.length)]);
   tempSpan.style.fontFamily = fonts[selectRandom(fonts.length)];
   tempSpan.style.fontSize = selectRandonFontSize(45, 15);
   tempSpan.style.padding = selectRandonPadding(20, 8);
@@ -178,6 +175,7 @@ function generateSpans(inputArray) {
   tempSpan.style.fontWeight = fontWeight[selectRandom(fontWeight.length)];
   tempSpan.style.textTransform =
    textTransform[selectRandom(textTransform.length)];
+  tempSpan.style.transform = selectRandonSkewX(20, -20);
   tempSpan.addEventListener('click', changeStyle);
   outputText.append(tempSpan);
  }
