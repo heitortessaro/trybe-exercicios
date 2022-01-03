@@ -1,0 +1,92 @@
+body {
+ margin: auto;
+ background-image: url('/images/background.png');
+ background-size: cover;
+ /* max-width: 1300px;
+ height: 750px; */
+ font-family: 'Amatic SC', cursive;
+ font-size: 36px;
+ text-align: center;
+ font-weight: 700;
+}
+
+main {
+ margin: auto;
+}
+
+h1 {
+ font-family: 'Permanent Marker', cursive;
+ text-align: center;
+ font-size: 55px;
+ margin-top: 30px;
+ margin-bottom: 20px;
+}
+
+#carta-gerada {
+ padding: 0px 5%;
+}
+
+button {
+ background-color: bisque;
+ font-family: 'Amatic SC', cursive;
+ font-size: 24px;
+ font-weight: 700;
+ padding: 5px 10px;
+ margin: 10px 10px;
+ cursor: pointer;
+ border-radius: 5px;
+}
+
+span {
+ display: inline-block;
+}
+
+/* https://designmodo.com/steps-css-animations/ */
+/* https://www.w3schools.com/cssref/css3_pr_animation-timing-function.asp */
+.mistery {
+ color: white;
+ font-family: 'Courier';
+ font-size: 50px;
+ width: 100%;
+
+ text-align: left;
+ font-weight: 900;
+ /* text-align: center; */
+ /* 3 shadowns effect: https://designshack.net/articles/css/12-fun-css-text-shadows-you-can-copy-and-paste/ */
+ text-shadow: 0px 4px 3px black, 0px 8px 13px black, 0px 18px 23px black;
+ /* margin: 0 30%; */
+ padding: 30px 30px 30px 30px;
+ /* white-space: nowrap; */
+ /* overflow: hidden; */
+ /* width: 30em; */
+ /* animation: mymove 4s steps(60); */
+ position: relative;
+ animation: mymove 6s;
+ animation-timing-function: linear;
+}
+/* https://developer.mozilla.org/pt-BR/docs/Web/CSS/@keyframes */
+@keyframes mymove {
+ from {
+  left: 120%;
+ }
+ to {
+  left: -50%;
+ }
+}
+
+/* Resourses related to the transition effect and opacity:
+https://stackoverflow.com/questions/10995165/what-is-the-opposite-of-hover-on-mouse-leave
+https://www.sitepoint.com/hide-elements-in-css/
+ */
+
+.hidden {
+ /* display: none; */
+ /* visibility: hidden; */
+ opacity: 5%;
+ transition: opacity 2.5s;
+}
+
+.hidden:hover {
+ opacity: 100%;
+ transition: opacity 0.25s;
+}
