@@ -22,6 +22,10 @@ const btnShow = document.createElement('button');
 btnShow.innerText = 'Show Letter';
 btnShow.id = 'mostrar-carta';
 
+// const btnPrint = document.createElement('button');
+// btnPrint.innerText = 'Print Letter';
+// btnPrint.id = 'imprimir-carta';
+
 const wordCounter = document.createElement('p');
 wordCounter.id = 'carta-contador';
 
@@ -34,9 +38,11 @@ main.appendChild(btnCreate);
 
 main.appendChild(btnShow);
 
-main.appendChild(outputText);
+// main.appendChild(btnPrint);
 
 main.appendChild(wordCounter);
+
+main.appendChild(outputText);
 
 // const color = ['empty', 'newspaper', 'magazine1', 'magazine2'];
 // const size = ['empty', 'medium', 'big', 'reallybig'];
@@ -128,7 +134,7 @@ function selectRandonRotation(max, min) {
 
 function counterWords() {
  const numberWords = outputText.childElementCount;
- wordCounter.innerText = `${numberWords}`;
+ wordCounter.innerText = `The letter has ${numberWords} words. This is the only tip you have. Now Try to discover the message.`;
 }
 
 function selectRandom(max) {
@@ -209,6 +215,51 @@ function generateSpans(inputArray) {
  }
 }
 
+// function sleep copied from: https://www.sitepoint.com/delay-sleep-pause-wait/
+// function sleep(milliseconds) {
+//  const date = Date.now();
+//  let currentDate = null;
+//  do {
+//   currentDate = Date.now();
+//  } while (currentDate - date < milliseconds);
+//  return;
+// }
+
+// function misteryEffect() {
+//  let message = 'Creating Mistery!';
+//  const misteryText = document.getElementById('mistery-text');
+//  const messageArray = message.split('');
+//  message = '';
+//  for (let index = 0; index < messageArray.length; index += 1) {
+//   message += messageArray[index];
+//   misteryText.innerText = message;
+//   sleep(150);
+//  }
+//  while (message !== '') {
+//   message = message.substring(1);
+//   misteryText.innerText = message;
+//   sleep(150);
+//  }
+//  return;
+// }
+
+//animationend event listener: https://www.w3schools.com/jsref/event_animationend.asp
+function misteryPresentation() {
+ const tempP = document.createElement('p');
+ tempP.id = 'mistery-text';
+ tempP.classList.add('mistery');
+ tempP.innerText = 'Creating Mistery!';
+ outputText.before(tempP);
+ tempP.addEventListener('animationend', removeMistery);
+ return;
+}
+
+function removeMistery() {
+ const tempP = document.getElementById('mistery-text');
+ tempP.remove();
+ handleInputText();
+}
+
 // split method https://www.w3schools.com/jsref/jsref_split.asp
 function handleInputText() {
  const tempText = inputText.value;
@@ -221,6 +272,7 @@ function handleInputText() {
  removeSpans();
  generateSpans(textArray);
  counterWords();
+ btnShow.innerText = 'Show Letter';
 }
 
 function hiddeAndShow() {
@@ -239,6 +291,21 @@ function hiddeAndShow() {
  }
 }
 
+// function printLetter() {
+//  var divContents = document.getElementById('carta-gerada').innerHTML;
+//  var WinPrint = window.open(
+//   '',
+//   '',
+//   'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0'
+//  );
+//  WinPrint.document.write(prtContent.innerHTML);
+//  WinPrint.document.close();
+//  WinPrint.focus();
+//  WinPrint.print();
+//  WinPrint.close();
+// }
+
 // add events
-btnCreate.addEventListener('click', handleInputText);
+btnCreate.addEventListener('click', misteryPresentation);
 btnShow.addEventListener('click', hiddeAndShow);
+// btnPrint.addEventListener('click', printLetter);

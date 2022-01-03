@@ -7,10 +7,34 @@ span {
  display: inline-block;
 }
 
+/* https://designmodo.com/steps-css-animations/ */
+.mistery {
+ color: white;
+ font-family: 'Courier';
+ font-size: 50px;
+
+ font-weight: 900;
+ /* text-align: center; */
+ /* 3 shadowns effect: https://designshack.net/articles/css/12-fun-css-text-shadows-you-can-copy-and-paste/ */
+ text-shadow: 0px 4px 3px black, 0px 8px 13px black, 0px 18px 23px black;
+
+ padding: 30px 30px 30px 30px;
+ white-space: nowrap;
+ overflow: hidden;
+ width: 30em;
+ animation: type 4s steps(60);
+}
+/* https://developer.mozilla.org/pt-BR/docs/Web/CSS/@keyframes */
+@keyframes type {
+ from {
+  width: 0;
+ }
+}
+
 .hidden {
  /* display: none; */
  /* visibility: hidden; */
- opacity: 2%;
+ opacity: 5%;
  transition: opacity 2.5s;
 }
 
