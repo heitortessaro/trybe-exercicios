@@ -18,6 +18,10 @@ const btnCreate = document.createElement('button');
 btnCreate.innerText = 'Create Letter';
 btnCreate.id = 'criar-carta';
 
+const btnShow = document.createElement('button');
+btnShow.innerText = 'Show Letter';
+btnShow.id = 'mostrar-carta';
+
 const wordCounter = document.createElement('p');
 wordCounter.id = 'carta-contador';
 
@@ -27,6 +31,8 @@ header.appendChild(title);
 main.appendChild(inputText);
 
 main.appendChild(btnCreate);
+
+main.appendChild(btnShow);
 
 main.appendChild(outputText);
 
@@ -135,6 +141,13 @@ function selectBackgroundImage() {
  return "url('./images/" + img + "')";
 }
 
+function selectRandomColor() {
+ const red = Math.floor(128 * Math.random());
+ const green = Math.floor(128 * Math.random());
+ const blue = Math.floor(128 * Math.random());
+ return `rgb(${red},${green},${blue})`;
+}
+
 function changeStyle(event) {
  const element = event.target;
  element.className = '';
@@ -147,6 +160,8 @@ function changeStyle(event) {
   textTransform[selectRandom(textTransform.length)];
  element.style.transform =
   selectRandonSkewX(15, -15) + selectRandonRotation(5, -5);
+ element.style.color = selectRandomColor();
+ element.classList.add('hidden');
 }
 
 function checkEmptyInput(text) {
@@ -174,18 +189,22 @@ function removeSpans() {
 function generateSpans(inputArray) {
  for (let index = 0; index < inputArray.length; index += 1) {
   const tempSpan = document.createElement('span');
-  tempSpan.innerText = inputArray[index];
-  tempSpan.style.fontFamily = fonts[selectRandom(fonts.length)];
-  tempSpan.style.fontSize = selectRandonFontSize(45, 15);
-  tempSpan.style.padding = selectRandonPadding(20, 8);
-  tempSpan.style.backgroundImage = selectBackgroundImage();
-  tempSpan.style.fontWeight = fontWeight[selectRandom(fontWeight.length)];
-  tempSpan.style.textTransform =
-   textTransform[selectRandom(textTransform.length)];
-  tempSpan.style.transform =
-   selectRandonSkewX(20, -20) + selectRandonRotation(5, -5);
-  tempSpan.addEventListener('click', changeStyle);
-  outputText.append(tempSpan);
+  if (inputArray[index] !== '') {
+   tempSpan.innerText = inputArray[index];
+   tempSpan.style.fontFamily = fonts[selectRandom(fonts.length)];
+   tempSpan.style.fontSize = selectRandonFontSize(45, 15);
+   tempSpan.style.padding = selectRandonPadding(20, 8);
+   tempSpan.style.backgroundImage = selectBackgroundImage();
+   tempSpan.style.fontWeight = fontWeight[selectRandom(fontWeight.length)];
+   tempSpan.style.textTransform =
+    textTransform[selectRandom(textTransform.length)];
+   tempSpan.style.transform =
+    selectRandonSkewX(20, -20) + selectRandonRotation(5, -5);
+   tempSpan.style.color = selectRandomColor();
+   tempSpan.classList.add('hidden');
+   tempSpan.addEventListener('click', changeStyle);
+   outputText.append(tempSpan);
+  }
  }
 }
 
@@ -203,5 +222,22 @@ function handleInputText() {
  counterWords();
 }
 
+function hiddeAndShow() {
+ // inspirado por: https://stackoverflow.com/questions/9819592/how-to-iterate-over-children-with-for-loop
+ const child = outputText.children;
+ if ('Show Letter' === btnShow.innerText) {
+  for (let index = 0; index < child.length; index += 1) {
+   child[index].classList.remove('hidden');
+  }
+  btnShow.innerText = 'Hidde Letter';
+ } else {
+  for (let index = 0; index < child.length; index += 1) {
+   child[index].classList.add('hidden');
+  }
+  btnShow.innerText = 'Show Letter';
+ }
+}
+
 // add events
 btnCreate.addEventListener('click', handleInputText);
+btnShow.addEventListener('click', hiddeAndShow);

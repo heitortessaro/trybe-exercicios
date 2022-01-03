@@ -5,13 +5,16 @@ https://www.sitepoint.com/hide-elements-in-css/
 
 span {
  display: inline-block;
+}
+
+.hidden {
  /* display: none; */
  /* visibility: hidden; */
  opacity: 2%;
  transition: opacity 2.5s;
 }
 
-span:hover {
+.hidden:hover {
  opacity: 100%;
  transition: opacity 0.25s;
 }
