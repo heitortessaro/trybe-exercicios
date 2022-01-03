@@ -249,7 +249,16 @@ function generateSpans(inputArray) {
 
 //animationend event listener: https://www.w3schools.com/jsref/event_animationend.asp
 function misteryPresentation() {
+ const tempText = inputText.value;
+ const textArray = tempText.split(' ');
+ if (checkEmptyInput(tempText) || checkOnlySpaces(textArray)) {
+  outputText.innerText = 'Por favor, digite o conteúdo da carta.';
+  return;
+ }
+ wordCounter.innerText = '';
  removeSpans();
+ btnCreate.removeEventListener('click', misteryPresentation);
+
  const tempP = document.createElement('div');
  tempP.id = 'mistery-text';
  tempP.classList.add('mistery');
@@ -269,15 +278,12 @@ function removeMistery() {
 function handleInputText() {
  const tempText = inputText.value;
  const textArray = tempText.split(' ');
- if (checkEmptyInput(tempText) || checkOnlySpaces(textArray)) {
-  outputText.innerText = 'Por favor, digite o conteúdo da carta.';
-  return;
- }
  outputText.innerText = '';
 
  generateSpans(textArray);
  counterWords();
  btnShow.innerText = 'Show Letter';
+ btnCreate.addEventListener('click', misteryPresentation);
 }
 
 function hiddeAndShow() {
