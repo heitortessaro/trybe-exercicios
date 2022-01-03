@@ -150,7 +150,6 @@ function selectRandomColor() {
 
 function changeStyle(event) {
  const element = event.target;
- element.className = '';
  element.style.fontFamily = fonts[selectRandom(fonts.length)];
  element.style.fontSize = selectRandonFontSize(45, 15);
  element.style.padding = selectRandonPadding(20, 8);
@@ -161,7 +160,9 @@ function changeStyle(event) {
  element.style.transform =
   selectRandonSkewX(15, -15) + selectRandonRotation(5, -5);
  element.style.color = selectRandomColor();
- element.classList.add('hidden');
+ if (element.classList.contains('hidden')) {
+  element.classList.add('hidden');
+ }
 }
 
 function checkEmptyInput(text) {
