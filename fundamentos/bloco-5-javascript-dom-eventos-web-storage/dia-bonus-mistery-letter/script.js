@@ -11,6 +11,8 @@ const inputText = document.createElement('input');
 inputText.id = 'carta-texto';
 inputText.placeholder = 'add your text here';
 
+const btnsDiv = document.createElement('div');
+
 const outputText = document.createElement('p');
 outputText.id = 'carta-gerada';
 
@@ -34,9 +36,11 @@ header.appendChild(title);
 
 main.appendChild(inputText);
 
-main.appendChild(btnCreate);
+main.appendChild(btnsDiv);
 
-main.appendChild(btnShow);
+btnsDiv.appendChild(btnCreate);
+
+btnsDiv.appendChild(btnShow);
 
 // main.appendChild(btnPrint);
 
@@ -245,7 +249,8 @@ function generateSpans(inputArray) {
 
 //animationend event listener: https://www.w3schools.com/jsref/event_animationend.asp
 function misteryPresentation() {
- const tempP = document.createElement('p');
+ removeSpans();
+ const tempP = document.createElement('div');
  tempP.id = 'mistery-text';
  tempP.classList.add('mistery');
  tempP.innerText = 'Creating Mistery!';
@@ -269,7 +274,7 @@ function handleInputText() {
   return;
  }
  outputText.innerText = '';
- removeSpans();
+
  generateSpans(textArray);
  counterWords();
  btnShow.innerText = 'Show Letter';
