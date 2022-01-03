@@ -255,6 +255,7 @@ function misteryPresentation() {
   outputText.innerText = 'Por favor, digite o conteúdo da carta.';
   return;
  }
+ inputText.value = '';
  wordCounter.innerText = '';
  removeSpans();
  btnCreate.removeEventListener('click', misteryPresentation);
