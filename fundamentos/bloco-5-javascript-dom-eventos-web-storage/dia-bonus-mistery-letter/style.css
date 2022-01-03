@@ -42,6 +42,7 @@ span {
 }
 
 /* https://designmodo.com/steps-css-animations/ */
+/* https://www.w3schools.com/cssref/css3_pr_animation-timing-function.asp */
 .mistery {
  color: white;
  font-family: 'Courier';
@@ -60,7 +61,7 @@ span {
  /* width: 30em; */
  /* animation: mymove 4s steps(60); */
  position: relative;
- animation: mymove 8s;
+ animation: mymove 6s;
  animation-timing-function: linear;
 }
 /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/@keyframes */

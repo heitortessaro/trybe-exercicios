@@ -251,12 +251,11 @@ function generateSpans(inputArray) {
 function misteryPresentation() {
  const tempText = inputText.value;
  const textArray = tempText.split(' ');
+ wordCounter.innerText = '';
  if (checkEmptyInput(tempText) || checkOnlySpaces(textArray)) {
   outputText.innerText = 'Por favor, digite o conteúdo da carta.';
   return;
  }
- inputText.value = '';
- wordCounter.innerText = '';
  removeSpans();
  btnCreate.removeEventListener('click', misteryPresentation);
 
@@ -280,7 +279,7 @@ function handleInputText() {
  const tempText = inputText.value;
  const textArray = tempText.split(' ');
  outputText.innerText = '';
-
+ inputText.value = '';
  generateSpans(textArray);
  counterWords();
  btnShow.innerText = 'Show Letter';
