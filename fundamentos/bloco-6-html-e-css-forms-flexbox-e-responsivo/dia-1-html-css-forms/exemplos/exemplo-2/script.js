@@ -13,5 +13,13 @@ function handleInputCheckbox(event) {
  return;
 }
 
+function handleInputText(event) {
+ if (event.key !== 'a') {
+  event.preventDefault();
+ }
+ return;
+}
+
 HREF_LINK.addEventListener('click', handleHrefClick);
 INPUT_CHECKBOX.addEventListener('click', handleInputCheckbox);
+INPUT_TEXT.addEventListener('keypress', handleInputText);
