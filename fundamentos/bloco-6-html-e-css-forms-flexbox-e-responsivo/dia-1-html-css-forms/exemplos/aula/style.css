@@ -59,3 +59,7 @@ body {
 .form-row label {
  margin-bottom: 15px;
 }
+
+.legacy-form-row {
+ padding: 10px;
+}
