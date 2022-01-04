@@ -57,6 +57,35 @@
      />
      <label for="house-type-2">Apartamento</label>
     </fieldset>
+
+    <fieldset class="legacy-form-last-job">
+     <legend>Dados do último emprego</legend>
+     <label for="abstract">Resumo do currículo:</label>
+     <textarea
+      name="abstract"
+      id="abstract"
+      cols="30"
+      rows="10"
+      maxlength="1000"
+      required
+      placeholder="Descreva suas expericências, inclua suas responsabilidades, atividades e realizações."
+     ></textarea>
+
+     <label for="role">Cargo: </label>
+     <input type="text" name="role" id="role" required maxlength="40" />
+
+     <label for="role-description">Descrição do cargo: </label>
+     <input
+      type="text"
+      name="role-description"
+      id="role-description"
+      required
+      maxlength="500"
+     />
+
+     <label for="start-date">Data de início:</label>
+     <input type="text" name="start-date" id="start-date" />
+    </fieldset>
    </div>
   </main>
   <script src="./script.js"></script>
