@@ -17,7 +17,7 @@
     <div class="form-row">
      <div class="line-content">
       <label for="full-name">Nome Completo:</label>
-      <input type="text" name="full-name" id="full-name" />
+      <input type="text" name="full-name" id="full-name" required />
      </div>
     </div>
 
@@ -38,7 +38,7 @@
 
     <div class="line-content">
      <label for="select-size">Tamanho da camisa: </label>
-     <select name="select-size" id="select-size">
+     <select name="t-shirt-size" id="select-size">
       <option value="p">Pequeno</option>
       <option value="m">Médio</option>
       <option value="g">Grande</option>
@@ -53,6 +53,7 @@
       cols="30"
       rows="10"
       placeholder="Explique o conteúdo da sua palestra."
+      required
      ></textarea>
     </div>
 
@@ -61,6 +62,10 @@
      <label for="available">
       Confirmo que estou disponível na data do evento:
      </label>
+    </div>
+
+    <div class="line-content">
+     <button type="submit">Enviar</button>
     </div>
    </form>
   </main>
