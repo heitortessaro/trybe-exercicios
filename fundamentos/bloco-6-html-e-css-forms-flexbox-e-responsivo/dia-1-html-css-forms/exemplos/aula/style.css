@@ -63,3 +63,13 @@ body {
 .legacy-form-row {
  padding: 10px;
 }
+
+.line-content {
+ margin: 20px;
+ border: 0 none;
+}
+
+textarea {
+ width: 100%;
+ margin-top: 5px;
+}
