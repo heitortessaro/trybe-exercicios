@@ -61,6 +61,14 @@ header h1 {
  padding: 10px;
 }
 
+#state {
+ margin: 5px 0 10px 0;
+}
+
+.house-type {
+ margin: 10px 0 10px 0;
+}
+
 .line-content {
  margin: 20px;
  border: 0 none;
