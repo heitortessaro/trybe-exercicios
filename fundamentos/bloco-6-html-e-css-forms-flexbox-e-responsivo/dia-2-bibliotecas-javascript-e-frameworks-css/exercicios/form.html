@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Exercicio 6.2</title>
-  <!-- CSS only -->
   <link
    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
    rel="stylesheet"
@@ -15,89 +14,130 @@
   <link rel="stylesheet" href="style.css" />
  </head>
  <body>
-  <header>
-   <h1>Cadastro de Currículo</h1>
-   <p>Adicione as informações necessárias a segui.</p>
+  <header class="container text-center">
+   <h1 class="display-2">Cadastro de Currículo</h1>
+   <p class="lead">Adicione as informações necessárias a segui.</p>
   </header>
-  <main>
+
+  <main class="container-lg">
    <form action="" method="get" id="main-form">
-    <div>
-     <fieldset>
-      <legend>Informações básicas</legend>
-      <label for="full-name">Nome completo: </label>
+    <section class="container">
+     <p class="display-6">Informações básicas</p>
+
+     <div class="mb-3">
+      <label class="form-label" for="full-name">Nome completo: </label>
       <input
+       class="form-control"
+       placeholder="Nome completo"
        type="text"
        name="full-name"
        id="full-name"
        maxlength="40"
        required
       />
+     </div>
 
-      <label for="email">E-mail: </label>
-      <input type="text" name="email" id="email" maxlength="50" required />
-
-      <label for="cpf">CPF: </label>
-      <input type="text" name="cpf" id="cpf" maxlength="11" required />
-
-      <label for="adress">Endereço:</label>
-      <input type="text" name="adress" id="adress" maxlength="200" required />
-
-      <label for="city">Cidade: </label>
-      <input type="text" name="city" id="city" maxlength="28" required />
-
-      <label for="state">Estado</label>
-      <select name="state" id="state" required></select>
-
-      <br />
-      <input type="radio" name="house-type" id="house-type-1" value="house" />
-      <label for="house-type-1">Casa</label>
+     <div class="mb-3">
+      <label class="form-label" for="email">E-mail: </label>
       <input
-       type="radio"
-       name="house-type"
-       id="house-type-2"
-       value="apartment"
-      />
-      <label for="house-type-2">Apartamento</label>
-     </fieldset>
-
-     <fieldset>
-      <legend>Dados do último emprego</legend>
-      <label for="abstract">Resumo do currículo:</label>
-      <textarea
-       name="abstract"
-       id="abstract"
-       cols="30"
-       rows="10"
-       maxlength="1000"
+       class="form-control"
+       placeholder="name@example.com"
+       type="email"
+       name="email"
+       id="email"
+       maxlength="50"
        required
-       placeholder="Descreva suas expericências, inclua suas responsabilidades, atividades e realizações."
-      ></textarea>
+      />
+     </div>
 
-      <label for="role">Cargo: </label>
-      <input type="text" name="role" id="role" required maxlength="40" />
-
-      <label for="role-description">Descrição do cargo: </label>
+     <div class="mb-3">
+      <label class="form-label" for="cpf">CPF: </label>
       <input
+       class="form-control"
        type="text"
-       name="role-description"
-       id="role-description"
+       name="cpf"
+       id="cpf"
+       maxlength="11"
        required
-       maxlength="500"
       />
+     </div>
 
-      <label for="start-date">Data de início:</label>
+     <div class="mb-3">
+      <label class="form-label" for="adress">Endereço:</label>
       <input
+       class="form-control"
        type="text"
-       name="start-date"
-       id="start-date"
-       maxlength="10"
-       placeholder="dd/mm/aaaa"
+       name="adress"
+       id="adress"
+       maxlength="200"
+       required
       />
-     </fieldset>
+     </div>
 
-     <button type="submit" id="submit">Enviar dados</button>
-     <button id="clear">Limpar dados</button>
-    </div>
+     <div class="mb-3">
+      <label class="form-label" for="city">Cidade: </label>
+      <input
+       class="form-control"
+       type="text"
+       name="city"
+       id="city"
+       maxlength="28"
+       required
+      />
+     </div>
+
+     <div class="mb-3">
+      <label class="form-label" for="state">Estado</label>
+      <select class="form-select" name="state" id="state" required></select>
+     </div>
+
+     <input type="radio" name="house-type" id="house-type-1" value="house" />
+     <label for="house-type-1">Casa</label>
+     <input
+      type="radio"
+      name="house-type"
+      id="house-type-2"
+      value="apartment"
+     />
+     <label for="house-type-2">Apartamento</label>
+    </section>
+
+    <section>
+     <legend>Dados do último emprego</legend>
+     <label for="abstract">Resumo do currículo:</label>
+     <textarea
+      name="abstract"
+      id="abstract"
+      cols="30"
+      rows="10"
+      maxlength="1000"
+      required
+      placeholder="Descreva suas expericências, inclua suas responsabilidades, atividades e realizações."
+     ></textarea>
+
+     <label for="role">Cargo: </label>
+     <input type="text" name="role" id="role" required maxlength="40" />
+
+     <label for="role-description">Descrição do cargo: </label>
+     <input
+      type="text"
+      name="role-description"
+      id="role-description"
+      required
+      maxlength="500"
+     />
+
+     <label for="start-date">Data de início:</label>
+     <input
+      type="text"
+      name="start-date"
+      id="start-date"
+      maxlength="10"
+      placeholder="dd/mm/aaaa"
+     />
+    </section>
+    <button type="submit" id="submit">Enviar dados</button>
+    <button id="clear">Limpar dados</button>
    </form>
   </main>
   <script src="./script.js"></script>
