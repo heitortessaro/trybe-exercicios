@@ -1,6 +1,9 @@
 // Select itens
 
 const InputState = document.getElementById('state');
+const InputBtnSubmit = document.getElementById('submit');
+const InputBtnClear = document.getElementById('clear');
+const MainForm = document.getElementById('main-form');
 
 // define arrays and variables
 const states = [
@@ -69,3 +72,16 @@ for (let index = 0; index < states.length; index += 1) {
  option.value = statesAbr[index];
  InputState.appendChild(option);
 }
+
+function handleSubmit(event) {
+ event.preventDefault();
+ return;
+}
+
+function clearData() {
+ MainForm.reset();
+ return;
+}
+
+InputBtnSubmit.addEventListener('click', handleSubmit);
+InputBtnClear.addEventListener('click', clearData);
