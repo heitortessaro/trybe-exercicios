@@ -1,3 +1,7 @@
-#div-textarea {
+body {
+ background-color: aliceblue;
+}
+
+.container {
  margin-top: 20px;
 }

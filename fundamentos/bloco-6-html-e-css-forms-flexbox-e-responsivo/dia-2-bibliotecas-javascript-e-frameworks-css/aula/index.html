@@ -68,7 +68,7 @@
      </select>
     </div>
 
-    <div id="div-textarea" class="container form-floating">
+    <div class="container form-floating">
      <textarea
       name="abstract"
       id="abstract"
@@ -81,15 +81,21 @@
      <label class="lead" for="abstract">Resumo da palestra: </label>
     </div>
 
-    <div>
-     <input type="checkbox" name="is-available" id="available" />
-     <label for="available">
+    <div class="container form-check">
+     <input
+      class="form-check-input"
+      type="checkbox"
+      name="is-available"
+      id="available"
+     />
+     <label class="form-check-label" for="available">
       Confirmo que estou disponível na data do evento:
      </label>
     </div>
 
-    <div>
-     <button type="submit">Enviar</button>
+    <div class="container">
+     <button class="btn btn-success" type="submit">Enviar</button>
+     <button type="reset" class="btn btn-danger">Cancelar</button>
     </div>
    </form>
   </main>
