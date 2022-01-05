@@ -21,7 +21,7 @@
 
   <main class="container-lg">
    <form action="" method="get" id="main-form">
-    <section class="container">
+    <section class="container border rounded">
      <p class="display-6">Informações básicas</p>
 
      <div class="mb-3">
@@ -91,53 +91,89 @@
       <select class="form-select" name="state" id="state" required></select>
      </div>
 
-     <input type="radio" name="house-type" id="house-type-1" value="house" />
-     <label for="house-type-1">Casa</label>
-     <input
-      type="radio"
-      name="house-type"
-      id="house-type-2"
-      value="apartment"
-     />
-     <label for="house-type-2">Apartamento</label>
+     <div class="mb-3">
+      <div class="form-check">
+       <input
+        class="form-check-input"
+        type="radio"
+        name="house-type"
+        id="house-type-1"
+        value="house"
+       />
+       <label class="form-check-label" for="house-type-1">Casa</label>
+      </div>
+      <div class="form-check">
+       <input
+        class="form-check-input"
+        type="radio"
+        name="house-type"
+        id="house-type-2"
+        value="apartment"
+       />
+       <label class="form-check-label" for="house-type-2">Apartamento</label>
+      </div>
+     </div>
     </section>
 
-    <section>
-     <legend>Dados do último emprego</legend>
-     <label for="abstract">Resumo do currículo:</label>
-     <textarea
-      name="abstract"
-      id="abstract"
-      cols="30"
-      rows="10"
-      maxlength="1000"
-      required
-      placeholder="Descreva suas expericências, inclua suas responsabilidades, atividades e realizações."
-     ></textarea>
+    <section class="container border rounded">
+     <p class="display-6">Dados do último emprego</p>
+     <div class="mb-3">
+      <div class="form-floating">
+       <label for="abstract">Resumo do currículo:</label>
+       <textarea
+        class="form-control"
+        name="abstract"
+        id="abstract"
+        maxlength="1000"
+        required
+       ></textarea>
+      </div>
+     </div>
 
-     <label for="role">Cargo: </label>
-     <input type="text" name="role" id="role" required maxlength="40" />
+     <div class="mb-3">
+      <label class="form-label" for="role">Cargo: </label>
+      <input
+       class="form-control"
+       type="text"
+       name="role"
+       id="role"
+       required
+       maxlength="40"
+      />
+     </div>
 
-     <label for="role-description">Descrição do cargo: </label>
-     <input
-      type="text"
-      name="role-description"
-      id="role-description"
-      required
-      maxlength="500"
-     />
+     <div class="mb-3">
+      <div class="form-floating">
+       <label for="role-description">Descrição do cargo: </label>
+       <textarea
+        class="form-control"
+        name="role-description"
+        id="role-description"
+        required
+        maxlength="500"
+       ></textarea>
+      </div>
+     </div>
 
-     <label for="start-date">Data de início:</label>
-     <input
-      type="text"
-      name="start-date"
-      id="start-date"
-      maxlength="10"
-      placeholder="dd/mm/aaaa"
-     />
+     <div class="mb-3">
+      <label class="form-label" for="start-date">Data de início:</label>
+      <input
+       type="date"
+       name="start-date"
+       id="start-date"
+       maxlength="10"
+       placeholder="dd/mm/aaaa"
+      />
+     </div>
     </section>
-    <button type="submit" id="submit">Enviar dados</button>
-    <button id="clear">Limpar dados</button>
+    <div class="container">
+     <button class="btn btn-success" type="submit" id="submit">
+      Enviar dados
+     </button>
+     <button class="btn btn-danger" type="reset" id="clear">
+      Limpar dados
+     </button>
+    </div>
    </form>
   </main>
   <script src="./script.js"></script>
