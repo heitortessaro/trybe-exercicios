@@ -28,3 +28,28 @@
 .links a {
  margin-left: 20px;
 }
+
+.header-container {
+ background-color: aqua;
+ display: flex;
+ justify-content: center;
+ /* height: 300px; */
+}
+
+.header-container a {
+ text-decoration: none;
+ color: #5995da;
+}
+
+.header-container img {
+ height: 200px;
+}
+
+.header-container header {
+ /* border: 1px black solid; */
+ width: 900px;
+ height: 300px;
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+}
