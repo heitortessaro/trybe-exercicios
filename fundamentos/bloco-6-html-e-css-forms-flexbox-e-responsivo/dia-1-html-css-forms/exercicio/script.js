@@ -67,16 +67,30 @@ const statesAbr = [
  'TO',
 ];
 
-for (let index = 0; index < states.length; index += 1) {
- const option = document.createElement('option');
- option.innerText = states[index];
- option.value = statesAbr[index];
- InputState.appendChild(option);
+//FUNCTIONS
+
+function createStatesOption() {
+ for (let index = 0; index < states.length; index += 1) {
+  const option = document.createElement('option');
+  option.innerText = states[index];
+  option.value = statesAbr[index];
+  InputState.appendChild(option);
+ }
 }
 
 function handleSubmit(event) {
  event.preventDefault();
- return;
+ let validation = validateData();
+
+ clearDivs();
+
+ if (validation.errorQtd === 0) {
+  renderData();
+ } else {
+  validation.messages.unshift('Dados Inválidos');
+
+  renderErrorMessages(validation.messages);
+ }
 }
 
 // reset method: https://www.w3schools.com/jsref/met_form_reset.asp
@@ -119,6 +133,9 @@ function dateIsValid() {
  return true;
 }
 
-InputBtnSubmit.addEventListener('click', handleSubmit);
-InputBtnClear.addEventListener('click', clearData);
-// dateIsValid();
+// MAIN
+window.onload = function () {
+ createStatesOption();
+ InputBtnSubmit.addEventListener('click', handleSubmit);
+ InputBtnClear.addEventListener('click', clearData);
+};
