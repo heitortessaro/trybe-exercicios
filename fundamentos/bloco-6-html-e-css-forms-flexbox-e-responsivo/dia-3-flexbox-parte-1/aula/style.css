@@ -13,12 +13,18 @@
 }
 
 .menu {
- border: 1px red solid;
+ /* border: 1px red solid; */
  color: white;
  width: 900px;
+ display: flex;
+ justify-content: space-between;
 }
 
 .menu a {
  text-decoration: none;
  color: white;
+}
+
+.links a {
+ margin-left: 20px;
 }
