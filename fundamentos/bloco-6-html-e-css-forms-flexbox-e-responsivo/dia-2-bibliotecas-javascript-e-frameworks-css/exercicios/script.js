@@ -1,12 +1,15 @@
 // datepiker
 // Add the JavaScript to the end of your document:
-var picker = new Pikaday({
+const picker = new Pikaday({
  field: document.getElementById('start-date'),
  //  minDate: new Date(1960, 1, 1),
  //  maxDate: new Date(2021, 12, 31),
  yearRange: [2000, 2023],
  //  format: 'DD MMM YYYY',
 });
+
+// DatePikerX
+const datepiker = document.getElementById('start-date-2').DatePickerX.init();
 
 // Select itens
 
