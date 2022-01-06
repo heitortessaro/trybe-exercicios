@@ -1,3 +1,13 @@
+// datepiker
+// Add the JavaScript to the end of your document:
+var picker = new Pikaday({
+ field: document.getElementById('start-date'),
+ //  minDate: new Date(1960, 1, 1),
+ //  maxDate: new Date(2021, 12, 31),
+ yearRange: [2000, 2023],
+ //  format: 'DD MMM YYYY',
+});
+
 // Select itens
 
 const InputState = document.getElementById('state');
@@ -120,5 +130,5 @@ function dateIsValid() {
 }
 
 InputBtnSubmit.addEventListener('click', handleSubmit);
-InputBtnClear.addEventListener('click', clearData);
+// InputBtnClear.addEventListener('click', clearData);
 // dateIsValid();
