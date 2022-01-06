@@ -53,3 +53,20 @@
  justify-content: space-around;
  align-items: center;
 }
+
+.main {
+ display: flex;
+ justify-content: center;
+}
+
+.images {
+ width: 900px;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+}
+
+.images img {
+ height: 300px;
+ width: 300px;
+}
