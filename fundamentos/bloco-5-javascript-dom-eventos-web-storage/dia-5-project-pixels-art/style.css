@@ -1,0 +1,32 @@
+body {
+  height: 1366px;
+  width: 768px;
+  box-sizing: border-box;
+}
+
+.color {
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  margin-left: 3px;
+  border: 1px solid black;
+}
+
+#pixel-board {
+  /* height: 270px;
+  width: 250px; */
+  border: 2px solid red;
+}
+
+.pixel {
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  display: inline-block;
+  /* float: left; */
+  border: 1px solid black;
+}
+
+#pixel-board {
+  text-align: center;
+}
