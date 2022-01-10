@@ -305,6 +305,11 @@ footer p {
  .know-the-hotel .grid li.large {
   flex-basis: 100%;
  }
+
+ .features .grid {
+  /* width: 100%; */
+  flex-direction: column;
+ }
 }
 /* 
   footer ul li:nth-child(1) {
