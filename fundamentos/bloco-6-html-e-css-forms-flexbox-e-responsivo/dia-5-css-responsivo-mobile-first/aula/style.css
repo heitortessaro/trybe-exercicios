@@ -277,6 +277,10 @@ footer p {
  header nav {
   display: none;
  }
+
+ header {
+  justify-content: center;
+ }
 }
 /* 
   footer ul li:nth-child(1) {
