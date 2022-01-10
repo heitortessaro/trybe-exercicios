@@ -317,6 +317,10 @@ footer p {
  .newsletter form input {
   margin-right: 0;
  }
+
+ .hero {
+  background-position: center;
+ }
 }
 /* 
   footer ul li:nth-child(1) {
