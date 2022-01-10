@@ -290,6 +290,21 @@ footer p {
  .hero .btn {
   font-size: 80%;
  }
+
+ /* .know-the-hotel .grid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+ } */
+
+ .know-the-hotel .grid li.small {
+  flex-basis: 100%;
+ }
+
+ .know-the-hotel .grid li.large {
+  flex-basis: 100%;
+ }
 }
 /* 
   footer ul li:nth-child(1) {
