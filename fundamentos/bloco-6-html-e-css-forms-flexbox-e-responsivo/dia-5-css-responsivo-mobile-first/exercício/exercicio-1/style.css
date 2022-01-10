@@ -7,7 +7,7 @@
  1V - Faça o tamanho da fonte ser maior;
  2V - Faça o tamanho da fonte dos elementos h1 ser menor;
  3V - Aumente o espaçamento entre as figuras;
- 4 - Adicione um pouco de margin na página.
+ 4V - Adicione um pouco de margin na página.
  5 - Guarde a largura da tela no ponto que você identificou que o layout atual não funcionou bem (por exemplo 800px) . Esse será o primeiro breakpoint do layout . Um breakpoint é apenas um ponto onde estamos definindo que o design atual deve mudar;
  6 - Crie uma media query no seu arquivo CSS , usando a dimensão em pixels que você guardou como o min-width do teste da media query . Dentro desse breakpoint , adicione os seguintes ajustes:
  
@@ -38,7 +38,7 @@ html {
 
 body {
  font-size: 18px;
- padding: 0 3%;
+ padding: 0 4%;
 }
 
 article {
@@ -63,6 +63,13 @@ main {
 }
 
 section {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+section figure figcaption {
+ text-align: center;
 }
 
 figure {
