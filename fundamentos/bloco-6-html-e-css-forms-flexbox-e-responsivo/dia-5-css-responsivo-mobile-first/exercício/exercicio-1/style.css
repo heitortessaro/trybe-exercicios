@@ -68,14 +68,17 @@ section {
  align-items: center;
 }
 
-section figure figcaption {
- text-align: center;
-}
-
 figure {
  margin: 0;
 }
 
 figcaption {
  font-size: 0.8em;
+ text-align: center;
+}
+
+@media screen and (min-width: 650px) {
+ body {
+  background-color: red;
+ }
 }
