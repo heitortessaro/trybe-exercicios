@@ -310,6 +310,13 @@ footer p {
   /* width: 100%; */
   flex-direction: column;
  }
+ .newsletter button {
+  margin-top: 8px;
+ }
+
+ .newsletter form input {
+  margin-right: 0;
+ }
 }
 /* 
   footer ul li:nth-child(1) {
