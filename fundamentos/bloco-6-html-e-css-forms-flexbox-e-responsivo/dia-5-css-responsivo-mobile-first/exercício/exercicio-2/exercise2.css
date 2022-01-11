@@ -10,6 +10,24 @@ html {
  padding: 0;
 }
 
+body {
+ padding: 8px 2%;
+ font-size: 18px;
+ background-color: beige;
+}
+
+header p {
+ font-size: 1.5rem;
+ text-align: center;
+}
+
+header nav ul {
+ padding: 0;
+}
+
+header nav ul li {
+}
+
 @media screen and (min-width: 550px) and (max-width: 900px) {
  body {
   background-color: blue;

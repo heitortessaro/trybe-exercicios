@@ -38,15 +38,16 @@ html {
 
 body {
  font-size: 1.2rem;
- padding: 0 4%;
+ font-family: Helvetica, sans-serif;
+ margin: 0 4%;
 }
 
 article {
 }
 
 h1 {
- font-size: 2rem;
- padding: 1rem 0;
+ font-size: 1.8rem;
+ margin: 0.8rem 0;
 }
 
 h2 {
@@ -77,8 +78,27 @@ figcaption {
  text-align: center;
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 600px) {
  body {
-  background-color: red;
+  background: rgba(0, 0, 255, 0.2);
+  margin: 25px 6%;
+ }
+
+ figure {
+  width: 45%;
+  margin-right: 4.5%;
+ }
+}
+
+@media screen and (min-width: 1020px) {
+ body {
+  background: rgba(0, 255, 0, 0.2);
+  margin: 25px 10%;
+  max-width: 1130px;
+ }
+
+ figure {
+  width: 30%;
+  margin-right: 2.5%;
  }
 }
