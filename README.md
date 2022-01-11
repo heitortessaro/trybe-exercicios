@@ -45,13 +45,13 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [x] 5-7: _[Projeto - Adivinhe a Cor](https://github.com/heitortessaro/trybe-exercicios/tree/main/fundamentos/bloco-5-javascript-dom-eventos-web-storage/dia-bonus-project-color-guess)_
 - [x] 5-7: _[Projeto - Carta Misteriosa](https://github.com/heitortessaro/trybe-exercicios/tree/main/fundamentos/bloco-5-javascript-dom-eventos-web-storage/dia-bonus-mistery-letter)_
 
-##### Bloco 6: HTML & CSS avanÃ§ado
+##### Bloco 6: HTML & CSS Avançado
 
 - [x] 6-1: _HTML & CSS - Forms_
 - [ ] 6-2: _Bibliotecas JavaScript e Frameworks CSS_
 - [x] 6-3: _CSS Flexbox - Part 1_
 - [x] 6-4: _CSS Flexbox - Part 2_
-- [ ] 6-5: _CSS Responsivo - Mobile First_
+- [x] 6-5: _CSS Responsivo - Mobile First_
 - [ ] 6-6: _[Projeto - Página inicial do Facebook]()_
 
 ##### Bloco 7: JavaScript ES6 & Testes UnitÃ¡rios
