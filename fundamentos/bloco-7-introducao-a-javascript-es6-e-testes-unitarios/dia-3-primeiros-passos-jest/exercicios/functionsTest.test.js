@@ -5,7 +5,8 @@ const sum = require('./sum');
 const myRemove = require('./myRemove');
 
 // myFizzBuzz.js
-const myFizzBuzz = require('./myFizzBuzz')
+const myFizzBuzz = require('./myFizzBuzz');
+const encode = require('./encode');
 
 describe("It tests the sum function:", () => {
 
@@ -58,4 +59,19 @@ describe('It test the myFizzBuzz function:', () => {
         expect(myFizzBuzz('7')).toBe(false);
     });
 
+});
+
+describe('It test the encode function:', () => {
+    it('Exists', () => {
+        expect(typeof encode).toBe('function');
+    });
+    it('Encode aeiou into 12345', () => {
+        expect(encode('aeiou')).toBe('12345');
+    })
+    it('Input and output strings hava same lenght', () => {
+        expect(encode('aeiouaeiou').length).toBe(10);
+    });
+    it('Verify encoding', () => {
+        expect(encode('a')).toBe('');
+    });
 });
