@@ -11,6 +11,8 @@ function encode(inputString) {
             stringArray[indexTest] = number;
         }
     }
+    console.log('VERIFICA')
+    console.log(stringArray.join(''));
     return stringArray.join('');
 }
 

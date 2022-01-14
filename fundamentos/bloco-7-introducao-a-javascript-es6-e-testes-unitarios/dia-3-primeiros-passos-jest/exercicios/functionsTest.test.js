@@ -65,13 +65,13 @@ describe('It test the encode function:', () => {
     it('Exists', () => {
         expect(typeof encode).toBe('function');
     });
-    it('Encode aeiou into 12345', () => {
-        expect(encode('aeiou')).toBe('12345');
+    it('Encode aeiouuoiea into 1234554321', () => {
+        expect(encode('aeiouuoiea')).toBe('1234554321');
     })
     it('Input and output strings hava same lenght', () => {
         expect(encode('aeiouaeiou').length).toBe(10);
     });
-    it('Verify encoding', () => {
-        expect(encode('a')).toBe('');
-    });
+    // it('Verify encoding', () => {
+    //     expect(encode('1')).toBe('');
+    // });
 });
