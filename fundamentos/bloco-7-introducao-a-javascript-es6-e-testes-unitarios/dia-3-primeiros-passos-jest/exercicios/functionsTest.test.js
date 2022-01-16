@@ -71,7 +71,7 @@ describe('It test the encode function:', () => {
     it('Input and output strings hava same lenght', () => {
         expect(encode('aeiouaeiou').length).toBe(10);
     });
-    // it('Verify encoding', () => {
-    //     expect(encode('1')).toBe('');
-    // });
+    it('It checks for deletion of non-existing characters.', () => {
+        expect(encode('abcdefghijklmnopqrstuvxywz')).toBe('12345');
+    });
 });
