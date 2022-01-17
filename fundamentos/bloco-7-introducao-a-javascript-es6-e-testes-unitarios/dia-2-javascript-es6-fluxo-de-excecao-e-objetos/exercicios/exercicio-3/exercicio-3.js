@@ -22,5 +22,11 @@ const addPropertyObject = (obj, key, value) => {
     obj[key] = value;
 };
 
+const listKeys = obj => {
+    keys = Object.keys(obj);
+    return keys;
+}
+
 addPropertyObject(lesson2, 'turno', 'noite');
-console.log(lesson2)
+
+console.log(listKeys(lesson3))
