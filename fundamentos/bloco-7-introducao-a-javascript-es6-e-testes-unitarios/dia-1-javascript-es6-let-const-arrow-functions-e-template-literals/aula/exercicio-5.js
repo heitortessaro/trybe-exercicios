@@ -11,17 +11,16 @@ const sortArray = textArray => {
     return textArray.sort();
 }
 
-const organizeString = (startString, replacementString, habilities) => {
-    const mainString = replaceX(startString, replacementString);
-    const sortedHabilities = sortArray(habilities);
-    return `${mainString}
-    - ${sortedHabilities[0]};
-    - ${sortedHabilities[1]};
-    - ${sortedHabilities[2]};
-    - ${sortedHabilities[3]};
-    - ${sortedHabilities[4]}.
-    #goTrybe
-    `;
+const organizeString = (startString, replacementString, habilitiesArray) => {
+    let mainString = replaceX(startString, replacementString);
+    const sortedHabilities = sortArray(habilitiesArray);
+    sortedHabilities.forEach(hability => {
+        mainString = `${mainString}
+       -${hability}`
+    });
+    mainString = `${mainString}
+    #goTrybe`;
+    return mainString;
 }
 
 console.log(organizeString('Tryber x aqui! Minhas cinco principais habilidades são:', 'Heitor', habilities));
