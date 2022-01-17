@@ -37,5 +37,11 @@ const objValues = obj => {
     return values;
 }
 
+const allLessons = (obj1, obj2, obj3) => {
+    // Como se deseja criar um "array" de objetos, eles devem ser inseridos dentro de chaves, para que fossem passados como um array
+    const newObj = Object.assign({}, { obj1, obj2, obj3 });
+    return newObj;
+}
+
 addPropertyObject(lesson2, 'turno', 'noite');
-console.log(objValues(lesson3))
+console.log(allLessons(lesson1, lesson2, lesson3))
