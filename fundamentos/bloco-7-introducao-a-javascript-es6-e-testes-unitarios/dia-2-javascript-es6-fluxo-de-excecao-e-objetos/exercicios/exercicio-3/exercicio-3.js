@@ -43,5 +43,16 @@ const allLessons = (obj1, obj2, obj3) => {
     return newObj;
 }
 
+const numberStudents = obj => {
+    let total = 0;
+    for (let index in obj) {
+        total += obj[index].numeroEstudantes;
+    }
+    return total;
+}
+
+
+
 addPropertyObject(lesson2, 'turno', 'noite');
-console.log(allLessons(lesson1, lesson2, lesson3))
+const allObjects = allLessons(lesson1, lesson2, lesson3);
+console.log(numberStudents(allObjects));
