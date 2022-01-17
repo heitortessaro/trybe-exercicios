@@ -56,9 +56,20 @@ const getValueByNumber = (obj, index) => {
     return values[index];
 }
 
+const verifyKeyValue = (obj, key, value) => {
+    const entries = Object.entries(obj);
+    for (let index = 0; index < entries.length; index += 1) {
+        if (entries[index][0] === key && entries[index][1] === value) {
+            return true;
+        }
+    }
+
+    return false;
+}
 
 
 addPropertyObject(lesson2, 'turno', 'noite');
 const allObjects = allLessons(lesson1, lesson2, lesson3);
 // console.log(numberStudents(allObjects));
-console.log(getValueByNumber(lesson1, 0));
+// console.log(getValueByNumber(lesson1, 0));
+console.log(verifyKeyValue(lesson3, 'numeroEstudantes', 10));
