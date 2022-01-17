@@ -27,6 +27,10 @@ const listKeys = obj => {
     return keys;
 }
 
-addPropertyObject(lesson2, 'turno', 'noite');
+const objSize = obj => {
+    keys = Object.keys(obj);
+    return keys.length;
+}
 
-console.log(listKeys(lesson3))
+addPropertyObject(lesson2, 'turno', 'noite');
+console.log(objSize(lesson3))
