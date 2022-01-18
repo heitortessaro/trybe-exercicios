@@ -21,7 +21,18 @@ const checkout = (carrinho, callback) => {
     return total;
 }
 
-const total = checkout(carrinho, desconto20P);
-console.log(total);
+// const total = checkout(carrinho, desconto20P);
+// console.log(total);
 
 // --------------------------------
+
+const criaDesconto = (porcentagem) => {
+    const calculaDesconto = (total) => {
+        return total * porcentagem / 100;
+    };
+    return calculaDesconto;
+}
+
+const desconto15PorCento = criaDesconto(15);
+const total2 = checkout(carrinho, desconto15PorCento)
+console.log(total2);
