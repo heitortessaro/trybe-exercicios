@@ -19,3 +19,11 @@ const studentAverage = (students, grades) => {
 
 console.log(studentAverage(students, grades));
 
+// Gabarito: 
+function studentAverageGabarito() {
+    const nameAndAverage = students.map((student, index) => ({
+        name: student,
+        average: (notes[index].reduce((acc, curr) => acc + curr, 0) / notes[index].length),
+    }));
+    return nameAndAverage;
+}
