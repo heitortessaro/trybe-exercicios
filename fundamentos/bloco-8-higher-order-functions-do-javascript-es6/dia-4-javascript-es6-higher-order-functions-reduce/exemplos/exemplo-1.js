@@ -12,7 +12,7 @@ const getBiggerFor = (arr) => {
     return biggerNumber;
 }
 
-const getBigger = (acc, number) => acc > number ? acc : acc = number;
+const getBigger = (acc, number) => acc > number ? acc : number;
 
 console.log(`Com for ${getBiggerFor(numbers)}`);
 console.log(`Com reduce ${numbers.reduce(getBigger)}`);
