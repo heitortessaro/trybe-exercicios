@@ -61,10 +61,12 @@ const books = [
     },
 ];
 
-//  Crie um array com o nome de todos os livros com mais de 60 anos de publicação.
+// Encontre o livro com o maior nome.
 
-function oldBooks(books) {
-    return books.filter((book) => (2022 - book.releaseYear) > 60).map((book) => book.name);
-}
+const biggerBookName = (acc, obj) => acc.length > obj.name.length ? acc : obj.name;
 
-console.log(oldBooks(books));
+console.log(`The book with the bigger name is: ${books.reduce(biggerBookName, '')}`);
+
+const biggerBookNameObj = (acc, obj) => acc.name.length > obj.name.length ? acc : obj;
+
+console.log(books.reduce(biggerBookNameObj));

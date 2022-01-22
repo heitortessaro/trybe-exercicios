@@ -61,10 +61,8 @@ const books = [
     },
 ];
 
-//  Crie um array com o nome de todos os livros com mais de 60 anos de publicação.
+// Calcule a média de idade que as pessoas autoras tinham quando seus respectivos livros foram lançados.
 
-function oldBooks(books) {
-    return books.filter((book) => (2022 - book.releaseYear) > 60).map((book) => book.name);
-}
+const averageAge = (acc, obj, index, arr) => acc + (obj.releaseYear - obj.author.birthYear) / arr.length;
 
-console.log(oldBooks(books));
+console.log(`The average age of authors when their book was relesed is ${Math.round(books.reduce(averageAge, 0))}.`)

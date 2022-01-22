@@ -61,10 +61,25 @@ const books = [
     },
 ];
 
-//  Crie um array com o nome de todos os livros com mais de 60 anos de publicação.
+//   Crie uma string com os nomes de todas as pessoas autoras.
 
-function oldBooks(books) {
-    return books.filter((book) => (2022 - book.releaseYear) > 60).map((book) => book.name);
-}
+const reduceNames = (acc, obj, index) => index === 0 ? `${obj.author.name}` : `${acc}, ${obj.author.name}`;
 
-console.log(oldBooks(books));
+const authorsName = `${books.reduce(reduceNames, '')}.`;
+console.log(`Method 1: ${authorsName}`);
+
+// -----
+
+const reduceNames2 = (acc, obj, index, arr) => {
+    if (index === 0) {
+        acc = `${obj.author.name}`;
+    } else {
+        acc = `${acc}, ${obj.author.name}`;
+    };
+    if (index === (arr.length - 1)) {
+        acc = acc.concat('.');
+    }
+    return acc;
+};
+
+console.log(`Method 2: ${books.reduce(reduceNames2, '')}`);
