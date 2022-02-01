@@ -3,8 +3,6 @@
 // apiScript.js     
 const API_URL = 'https://icanhazdadjoke.com/';
 
-console.log('teste');
-
 // const fetchJoke = () => {
 //     const myObject = {
 //         method: 'GET',
