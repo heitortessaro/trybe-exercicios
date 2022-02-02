@@ -1,4 +1,20 @@
 const API_URL = `https://api.coincap.io/v2/assets`;
+const CURR_API = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest';
+const END_POINT_USD = `/currencies/usd.min.json`;
+
+const buildCurrRatesURL = (currency) => `${CURR_API}${currency}`;
+
+const catchUsdBrlRates = async () => {
+    try {
+        const url = buildCurrRatesURL(END_POINT_USD);
+        const response = await fetch(url);
+        const dataRate = await response.json();
+        // console.log(dataRate.brl);
+        return dataRate;
+    } catch (error) {
+        console.log("Erro de aquisição dados currency rates.")
+    }
+};
 
 const catchCurrencies = async () => {
     try {
@@ -28,6 +44,8 @@ const removeChild = (element) => {
 
 const showCurrencies = async () => {
     try {
+        const dataRate = await catchCurrenciesRates();
+        console.log(dataRate);
         const first10 = await catchCurrencies();
         const stringArr = first10.map((element) => createString(element));
         removeChild(criptoList);
