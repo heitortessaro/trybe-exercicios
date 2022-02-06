@@ -1,24 +1,35 @@
 const API_URL = `https://api.coincap.io/v2/assets`;
 const CURR_API = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest';
-const END_POINT_USD = `/currencies/usd.json`;
+const END_POINT_USD = '/currencies/usd.min.json';
 
 const buildCurrRatesURL = (currency) => `${CURR_API}${currency}`;
 
-const catchUsdBrlRates = async () => {
-    try {
-        const url = buildCurrRatesURL(END_POINT_USD);
-        const response = await fetch(url);
-        const dataRate = await response.json();
-        // console.log(dataRate.brl);
-        return dataRate;
-    } catch (error) {
-        console.log("Erro de aquisição dados currency rates.")
-    }
+// const catchUsdBrlRates = async () => {
+// try {
+//     const url = buildCurrRatesURL(END_POINT_USD);
+//     const response = await fetch(url);
+//     const dataRate = await response.json();
+//     // console.log(dataRate.brl);
+//     return dataRate;
+// } catch (error) {
+//     console.log("Erro de aquisição dados currency rates.")
+// }
+// };
+
+const fetchUsdCurrencies = async () => {
+    const baseUrl = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest'
+    const usdEndpoint = '/currencies/usd.min.json'
+    const url = baseUrl.concat(usdEndpoint);
+
+    const usdCurrencies = await fetch(url)
+        .then((response) => response.json())
+        .then((data) => data.usd)
+        .catch((error) => error.toString());
+
+    return usdCurrencies;
 };
 
-
 const fetchCoins = async () => {
-    //   const url = 'https://api.coincap.io/v2/assets';
     const coins = await fetch(API_URL)
         .then((response) => response.json())
         .then((data) => data.data)
@@ -42,8 +53,8 @@ const fetchCoins = async () => {
 
 const round2Dec = (number) => Math.round(number * 100) / 100;
 
-const createString = ({ name, symbol, priceUsd }) =>
-    `${name} (${symbol}) ${round2Dec(parseFloat(priceUsd))}.`;
+const createString = ({ name, symbol, priceUsd }, brl) =>
+    `${name} (${symbol}) - R$ ${round2Dec(parseFloat(priceUsd * brl))}.`;
 
 // https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
 const removeChild = (element) => {
@@ -56,9 +67,10 @@ const showCurrencies = async () => {
     try {
         // const dataRate = await catchCurrenciesRates();
         // console.log(dataRate);
+        const { brl } = await fetchUsdCurrencies();
         const data = await fetchCoins();
         const first10 = data.filter((element) => parseInt(element.rank) <= 10);
-        const stringArr = first10.map((element) => createString(element));
+        const stringArr = first10.map((element) => createString(element, brl));
         removeChild(criptoList);
         for (const string of stringArr) {
             const li = document.createElement('li');
@@ -66,7 +78,7 @@ const showCurrencies = async () => {
             criptoList.appendChild(li);
         }
     } catch (error) {
-        alert('Erro de conexão. Tente novamente.')
+        alert('Erro de conexão. Tente novamente.');
     }
 
 }
@@ -74,7 +86,6 @@ const showCurrencies = async () => {
 const start = () => {
     const btnGet = document.getElementById('btnGetCurrencies');
     const criptoList = document.getElementById('criptoList');
-    fetchCoins();
     btnGet.addEventListener('click', showCurrencies);
 };
 
