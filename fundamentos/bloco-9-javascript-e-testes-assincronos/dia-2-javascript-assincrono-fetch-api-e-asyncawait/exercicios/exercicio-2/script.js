@@ -1,6 +1,6 @@
 const API_URL = `https://api.coincap.io/v2/assets`;
 const CURR_API = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest';
-const END_POINT_USD = `/currencies/usd.min.json`;
+const END_POINT_USD = `/currencies/usd.json`;
 
 const buildCurrRatesURL = (currency) => `${CURR_API}${currency}`;
 
@@ -16,19 +16,29 @@ const catchUsdBrlRates = async () => {
     }
 };
 
-const catchCurrencies = async () => {
-    try {
-        const response = await fetch(API_URL);
-        const dataCur = await response.json();
-        // console.log(data.data);
-        const { data } = dataCur;
-        // const first10 = data.filter((element, index) => index < 10);
-        const first10 = data.filter((element) => parseInt(element.rank) <= 10);
-        return first10;
-    } catch (error) {
-        console.log('Erro de aquisição de dados.')
-    }
+
+const fetchCoins = async () => {
+    //   const url = 'https://api.coincap.io/v2/assets';
+    const coins = await fetch(API_URL)
+        .then((response) => response.json())
+        .then((data) => data.data)
+        .catch((error) => error.toString());
+
+    return coins;
 }
+
+// const catchCurrencies = async () => {
+//     try {
+//         const response = await fetch(API_URL);
+//         const dataCur = await response.json();
+//         // console.log(data.data);
+//         const { data } = dataCur;
+//         // const first10 = data.filter((element, index) => index < 10);
+//         return data;
+//     } catch (error) {
+//         console.log('Erro de aquisição de dados.')
+//     }
+// }
 
 const round2Dec = (number) => Math.round(number * 100) / 100;
 
@@ -44,9 +54,10 @@ const removeChild = (element) => {
 
 const showCurrencies = async () => {
     try {
-        const dataRate = await catchCurrenciesRates();
-        console.log(dataRate);
-        const first10 = await catchCurrencies();
+        // const dataRate = await catchCurrenciesRates();
+        // console.log(dataRate);
+        const data = await fetchCoins();
+        const first10 = data.filter((element) => parseInt(element.rank) <= 10);
         const stringArr = first10.map((element) => createString(element));
         removeChild(criptoList);
         for (const string of stringArr) {
@@ -63,7 +74,7 @@ const showCurrencies = async () => {
 const start = () => {
     const btnGet = document.getElementById('btnGetCurrencies');
     const criptoList = document.getElementById('criptoList');
-
+    fetchCoins();
     btnGet.addEventListener('click', showCurrencies);
 };
 
