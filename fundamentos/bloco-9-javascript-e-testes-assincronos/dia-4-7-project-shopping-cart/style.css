@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
-  font-family: Epilogue, sans-serif;
+  /* font-family: Epilogue, sans-serif; */
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -174,10 +175,18 @@ body {
   box-shadow: 0px 4px 4px rgb(0, 0, 0);
 }
 
+.cart .cart__total{
+  text-align: center;
+  padding: 10px;
+  font-size: 1.2em;
+  font-weight: 900;
+}
+
 .empty-cart {
   width: 170px;
   height: 35px;
   margin: 0 auto;
+  border-radius: 5px;
   border: 2px solid rgb(5, 52, 219);
   background-color: rgb(249, 249, 246);
 }
