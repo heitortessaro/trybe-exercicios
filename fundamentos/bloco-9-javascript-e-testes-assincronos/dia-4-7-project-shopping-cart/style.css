@@ -169,10 +169,18 @@ body {
   border-radius: 10px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
   display: block;
+  display: flex;
+  align-items: center;
 }
 
 .cart .cart__items .cart__item:hover{
   box-shadow: 0px 4px 4px rgb(0, 0, 0);
+}
+
+.cart .item__image{
+  width: 75px;
+  border-radius: 10%;
+  margin: 10px;
 }
 
 .cart .cart__total{
