@@ -31,7 +31,7 @@ function cartItemClickListener(event) {
 function createCartItemElement({ sku, name, salePrice }) {
   const li = document.createElement('li');
   li.className = 'cart__item';
-  li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
+  li.innerText = `NAME: ${name} \n PRICE: $${salePrice}`;
   li.addEventListener('click', cartItemClickListener);
   li.setAttribute('salePrice', salePrice);
   li.setAttribute('sku', sku);
@@ -63,8 +63,6 @@ function createCustomElement(element, className, innerText) {
 
 function createProductItemElement({ sku, name, image }) {
   const imageHD = image.replace('I.jpg', 'J.jpg');
-  console.log(image);
-  console.log(imageHD);
   const section = document.createElement('section');
   section.id = sku;
   section.className = 'item';
