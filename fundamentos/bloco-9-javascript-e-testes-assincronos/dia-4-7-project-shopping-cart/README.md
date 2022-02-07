@@ -8,4 +8,4 @@ Para a conclusão do projeto foram utilizados:
 - Funções assíncronas;
 - Testes unitários.
 
-Para acessar esse projeto utilize o link: [project shopping cart]().
+Para acessar esse projeto utilize o link: [project shopping cart](https://heitortessaro.github.io/projects/projects-trybe/project-shopping-cart/index.html).
