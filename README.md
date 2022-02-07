@@ -68,7 +68,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [x] 8-3: _JavaScript ES6 - Higher Order Functions - map e filter_
 - [x] 8-4: _JavaScript ES6 - Higher Order Functions - reduce_
 - [x] 8-5: _JavaScript ES6 - spread operator, rest parameter, destructuring e mais_
-- [x] 8-6: _[Projeto - Zoo functions]()_
+- [x] 8-6: _[Projeto - Zoo functions](https://github.com/heitortessaro/trybe-exercicios/tree/main/fundamentos/bloco-8-higher-order-functions-do-javascript-es6/dia-5-6-project-zoo-functions)_
 
 ##### Bloco 9: Assincronicidade & Callbacks
 
