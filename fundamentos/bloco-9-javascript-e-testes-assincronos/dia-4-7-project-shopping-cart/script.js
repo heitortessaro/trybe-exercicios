@@ -21,8 +21,12 @@ const calcCartTotalPrice = (price) => {
 };
 
 function cartItemClickListener(event) {
-  const elemento = event.target;
+  const elemento = event.target.parentNode;
   const salePrice = elemento.getAttribute('salePrice');
+  // while (elemento.firstChild) {
+  //   elemento.lastChild.remove();
+  // }
+  // elemento.innerHTML = '';
   elemento.remove();
   calcCartTotalPrice(-salePrice);
   saveCartItems(JSON.stringify(itensInTheCart()));
@@ -31,10 +35,23 @@ function cartItemClickListener(event) {
 function createCartItemElement({ sku, name, salePrice }) {
   const li = document.createElement('li');
   li.className = 'cart__item';
-  li.innerText = `NAME: ${name} \n PRICE: $${salePrice}`;
-  li.addEventListener('click', cartItemClickListener);
+  // li.innerText = `NAME: ${name} \n PRICE: $${salePrice}`;
+  // li.addEventListener('click', cartItemClickListener);
   li.setAttribute('salePrice', salePrice);
   li.setAttribute('sku', sku);
+
+  const divImg = document.createElement('div');
+  divImg.className = 'cart__img';
+  divImg.addEventListener('click', cartItemClickListener);
+
+  const divText = document.createElement('div');
+  divText.className = 'cart__text';
+  divText.innerText = `NAME: ${name} \n PRICE: $${salePrice}`;
+  divText.addEventListener('click', cartItemClickListener);
+
+  li.appendChild(divImg);
+  li.appendChild(divText);
+
   return li;
 }
 
