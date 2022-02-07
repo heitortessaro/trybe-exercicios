@@ -23,16 +23,12 @@ const calcCartTotalPrice = (price) => {
 function cartItemClickListener(event) {
   const elemento = event.target.parentNode;
   const salePrice = elemento.getAttribute('salePrice');
-  // while (elemento.firstChild) {
-  //   elemento.lastChild.remove();
-  // }
-  // elemento.innerHTML = '';
   elemento.remove();
   calcCartTotalPrice(-salePrice);
   saveCartItems(JSON.stringify(itensInTheCart()));
 }
 
-function createCartItemElement({ sku, name, salePrice }) {
+function createCartItemElement({ sku, name, salePrice, picture }) {
   const li = document.createElement('li');
   li.className = 'cart__item';
   // li.innerText = `NAME: ${name} \n PRICE: $${salePrice}`;
@@ -43,6 +39,7 @@ function createCartItemElement({ sku, name, salePrice }) {
   const divImg = document.createElement('div');
   divImg.className = 'cart__img';
   divImg.addEventListener('click', cartItemClickListener);
+  divImg.appendChild(createProductImageElement(picture));
 
   const divText = document.createElement('div');
   divText.className = 'cart__text';
@@ -56,8 +53,9 @@ function createCartItemElement({ sku, name, salePrice }) {
 }
 
 async function addIdToCart(itemId) {
-  const { id: sku, title: name, price: salePrice } = await fetchItem(itemId);
-  const elemento = createCartItemElement({ sku, name, salePrice });
+  const { id: sku, title: name, price: salePrice, pictures } = await fetchItem(itemId);
+  const picture = pictures[0].url;
+  const elemento = createCartItemElement({ sku, name, salePrice, picture });
   cartItemsOl.appendChild(elemento);
   saveCartItems(JSON.stringify(itensInTheCart()));
   calcCartTotalPrice(salePrice);
