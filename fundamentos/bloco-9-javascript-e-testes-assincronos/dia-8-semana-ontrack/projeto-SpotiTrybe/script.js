@@ -33,6 +33,20 @@ const getGenre = async (token) => {
     // console.log(data);
 };
 
+// HELPERS
+
+const getElementOrClosest = (sectionClass, target) =>
+    target.classList.contains('sectionClass')
+        ? target
+        : target.closest(sectionClass);
+
+
+//  HENDLERS
+
+const handleGenreCardClick = (event) => {
+    console.log(getElementOrClosest('.genre', event.target));
+};
+
 // RENDERS
 
 const renderGenres = (genres) => {
@@ -53,6 +67,8 @@ const renderGenres = (genres) => {
 
         section.appendChild(image);
         section.appendChild(paragraph);
+        section.addEventListener('click', handleGenreCardClick);
+
         genresCards.appendChild(section);
     });
 };
