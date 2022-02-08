@@ -41,10 +41,21 @@ const getElementOrClosest = (sectionClass, target) =>
         : target.closest(sectionClass);
 
 
+const clearSelectedItem = (containerSelector) => {
+    const element = document.querySelector(`${containerSelector} .item-selected`);
+    if (element) {
+        element.classList.remove('item-selected');
+    };
+}
+
+
 //  HENDLERS
 
 const handleGenreCardClick = (event) => {
-    console.log(getElementOrClosest('.genre', event.target));
+    const genreSection = getElementOrClosest('.genre', event.target);
+    const id = genreSection.id;
+    clearSelectedItem('.genre-cards');
+    genreSection.classList.add('item-selected');
 };
 
 // RENDERS
