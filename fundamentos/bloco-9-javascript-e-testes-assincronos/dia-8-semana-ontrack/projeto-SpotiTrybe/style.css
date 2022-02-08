@@ -52,3 +52,81 @@ header .player-container{
     padding: 10px;
     font-size: 1.2rem;
 }
+
+main{
+    display: flex;
+    justify-content: space-between;
+}
+
+.step{
+    /* background-color: red; */
+    width: 30%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.step h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.genre-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.genre-cards section {
+    background-color: var(--cinza3);
+    margin: 20px;
+    padding: 20px;
+}
+
+.genre-cards section:hover {
+    background-color: var(--cinza2);
+    cursor: pointer;
+}
+
+.genre-cards img{
+    height: 180px;
+    margin-bottom: 20px;
+}
+
+.genre-cards p {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.playlist-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-card{
+    background-color: var(--cinza2);
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+    cursor:pointer;
+}
+
+.text-card:hover{
+    background-color: var(--cinza1);
+}
+
+.tracks-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-selected {
+    background-color: var(--cinza-claro) !important;
+    color: var(--cinza3) !important;
+}
