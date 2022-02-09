@@ -121,7 +121,7 @@ body {
   height: auto;
   margin: 5px;
   width: 200px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border: 2px solid rgb(234, 234, 233);
   border-radius: 5px;
   box-sizing: border-box;
@@ -172,11 +172,14 @@ body {
   flex-basis: 32%;
   flex-flow: column wrap;
   background-color: rgb(231, 231, 228);
+  border-left: 4px solid rgb(10, 118, 79);
   height: 100vh;
 }
 
 .cart .cart__items {
-  height: 500px;
+  /* height: 500px; */
+  min-height: 500px;
+  max-height: 60%;
   overflow-y: scroll;
   padding: 3%;
   display: flex;

@@ -85,8 +85,8 @@ function createProductItemElement({ sku, name, image }) {
   section.className = 'item';
 
   section.appendChild(createCustomElement('span', 'item__sku', sku));
-  section.appendChild(createCustomElement('span', 'item__title', name));
   section.appendChild(createProductImageElement(imageHD));
+  section.appendChild(createCustomElement('span', 'item__title', name));
   section.appendChild(createCustomElement('button', 'item__add', 'Adicionar ao carrinho!'));
 
   return section;
