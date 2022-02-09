@@ -143,8 +143,17 @@ body {
   text-align: center;
 }
 
+.item .item__price {
+  /* display: flex; */
+  /* align-items: center; */
+  /* flex-grow: 1; */
+  padding: 10px;
+  text-align: center;
+  font-weight: 700;
+}
+
 .item .item__image {
-  width: 100%;
+  max-width: 100%; 
 }
 
 .item .item__add {

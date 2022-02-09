@@ -84,7 +84,7 @@ function createCustomElement(element, className, innerText) {
   return e;
 }
 
-function createProductItemElement({ sku, name, image }) {
+function createProductItemElement({ sku, name, image, price }) {
   const imageHD = image.replace('I.jpg', 'J.jpg');
   const section = document.createElement('section');
   section.id = sku;
@@ -93,6 +93,7 @@ function createProductItemElement({ sku, name, image }) {
   section.appendChild(createCustomElement('span', 'item__sku', sku));
   section.appendChild(createProductImageElement(imageHD));
   section.appendChild(createCustomElement('span', 'item__title', name));
+  section.appendChild(createCustomElement('span', 'item__price', `Price: R$ ${price}`));
   section.appendChild(createCustomElement('button', 'item__add', 'Adicionar ao carrinho!'));
 
   return section;
@@ -122,8 +123,8 @@ const loadItemsToTheCart = async () => {
 
 function addElementsOnWindows(arrElements) {
   arrElements.forEach((element) => {
-    const { id: sku, title: name, thumbnail: image } = element;
-    const elemento = createProductItemElement({ sku, name, image });
+    const { id: sku, title: name, thumbnail: image, price, } = element;
+    const elemento = createProductItemElement({ sku, name, image, price });
     itemsSec.appendChild(elemento);
   });
 }
@@ -157,7 +158,8 @@ const loadSerchItems = async () => {
 
 window.onload = async () => {
   addLoadingElements(50);
-  const results = await fetchProducts('Notbooks');
+  const results = await fetchProducts('computador');
+  console.log(results);
   loadItemsToTheCart();
   removeElements();
   addElementsOnWindows(results);
