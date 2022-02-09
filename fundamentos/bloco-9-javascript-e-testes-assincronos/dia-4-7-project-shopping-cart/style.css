@@ -209,6 +209,14 @@ body {
   margin: 10px;
 }
 
+.cart .cart__btn {
+  /* background-color: red; */
+  width: 40px;
+  padding: 0 3px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 .cart .cart__total{
   text-align: center;
   padding: 10px;

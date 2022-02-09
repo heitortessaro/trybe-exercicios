@@ -48,8 +48,14 @@ function createCartItemElement({ sku, name, salePrice, picture }) {
   divText.innerText = `NAME: ${name} \n PRICE: $${salePrice}`;
   divText.addEventListener('click', cartItemClickListener);
 
+  const removeBtn = document.createElement('img');
+  removeBtn.className = 'cart__btn';
+  removeBtn.src = '/img/delete.png';
+  removeBtn.addEventListener('click', cartItemClickListener);
+
   li.appendChild(divImg);
   li.appendChild(divText);
+  li.appendChild(removeBtn);
 
   return li;
 }
@@ -151,7 +157,7 @@ const loadSerchItems = async () => {
 
 window.onload = async () => {
   addLoadingElements(50);
-  const results = await fetchProducts('computador');
+  const results = await fetchProducts('Notbooks');
   loadItemsToTheCart();
   removeElements();
   addElementsOnWindows(results);
