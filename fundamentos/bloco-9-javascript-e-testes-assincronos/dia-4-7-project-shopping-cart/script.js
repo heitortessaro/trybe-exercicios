@@ -2,6 +2,8 @@ const cartItemsOl = document.getElementsByClassName('cart__items')[0];
 const totalPriceSpan = document.getElementsByClassName('total-price')[0];
 const emptyCartBtn = document.getElementsByClassName('empty-cart')[0];
 const itemsSec = document.getElementsByClassName('items')[0];
+const searchBtn = document.getElementsByClassName('search-btn')[0];
+const searchinput = document.getElementsByClassName('search-input')[0];
 let totalPrice = 0;
 
 const itensInTheCart = () => [...document.getElementsByClassName('cart__item')]
@@ -129,17 +131,31 @@ const addLoadingElements = (quantidade) => {
   }
 };
 
-const removeLoadingElements = () => {
-  const loadingElements = document.getElementsByClassName('loading');
-  const loadingElementsArr = [...loadingElements];
-  loadingElementsArr.forEach((element) => element.remove());
+const removeElements = () => {
+  const elements = document.getElementsByClassName('item');
+  const elementsArr = [...elements];
+  elementsArr.forEach((element) => element.remove());
+};
+
+
+
+const loadSerchItems = async () => {
+  const searchText = searchinput.value;
+  removeElements();
+  addLoadingElements(50);
+  const results = await fetchProducts(searchText);
+  removeElements();
+  addElementsOnWindows(results);
+  searchinput.value = '';
 };
 
 window.onload = async () => {
   addLoadingElements(50);
   const results = await fetchProducts('computador');
   loadItemsToTheCart();
-  removeLoadingElements();
+  removeElements();
   addElementsOnWindows(results);
   emptyCartBtn.addEventListener('click', emptyCart);
+  searchinput.value = '';
+  searchBtn.addEventListener('click', loadSerchItems);
 };
