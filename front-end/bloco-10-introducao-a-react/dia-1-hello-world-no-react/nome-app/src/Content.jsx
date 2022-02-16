@@ -27,7 +27,7 @@ class Content extends Component {
   render() {
     const printObj = ({conteudo, bloco, status}) => {
      return ( 
-        <div>
+        <div key={conteudo} className='card4'>
           <h3>O conteúdo é: {conteudo}</h3>
           <p>Status: {status}</p>
           <p>Bloco: {bloco}</p>
@@ -37,6 +37,7 @@ class Content extends Component {
 
     return (
       <div>
+        
         {conteudos.map((elemento) => printObj(elemento))}
       </div>
     );
