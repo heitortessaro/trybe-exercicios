@@ -78,14 +78,13 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [x] 9-4: _[Projeto - Carrinho de Compras](https://github.com/heitortessaro/trybe-exercicios/tree/main/fundamentos/bloco-9-javascript-e-testes-assincronos/dia-4-7-project-shopping-cart)_
 - [x] 9-5: _Porjeto - [SpotuTrybe - Semana Ontrack](https://github.com/heitortessaro/trybe-exercicios/tree/main/fundamentos/bloco-9-javascript-e-testes-assincronos/dia-8-semana-ontrack/projeto-SpotiTrybe)_
 
-##### Bloco 10: Jest
-
-- [ ] 10-1: _Primeiros passos no Jest_
-- [ ] 10-2: _Jest - Testes AssÃ­ncronos_
-- [ ] 10-3: _Jest - Simulando comportamentos_
-- [ ] 10-4: _[Projeto - Jest AssÃ­ncrono e Mocking]()_
-
 ## Desenvolvimento Front-end :hourglass_flowing_sand:
+
+##### Bloco 10: Introdução à React
+
+- [x] 10-1: _Introdução à React_
+- [ ] 10-2: _Componentes React_
+- [ ] 10-3: _[Projeto - Sistema Solar]()_
 
 ##### Bloco 11: IntroduÃ§Ã£o - React
 
