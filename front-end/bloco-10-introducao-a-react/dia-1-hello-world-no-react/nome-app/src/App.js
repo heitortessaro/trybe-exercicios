@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './Header';
+import Content from './Content';
 
 const atividades = ['Caminhar', 'Correr', 'Hiking', 'Walking'];
 
@@ -13,6 +14,7 @@ function App() {
   return (
     <div>
       <Header />
+      <Content />
       <ol>
         {atividades.map((elemento) => Task(elemento))}
       </ol>
