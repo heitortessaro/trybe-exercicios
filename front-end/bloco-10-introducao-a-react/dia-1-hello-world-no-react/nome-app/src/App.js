@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './Header';
 import Content from './Content';
+import Footer from './Footer';
 
 const atividades = ['Caminhar', 'Correr', 'Hiking', 'Walking'];
 
@@ -15,6 +16,11 @@ function App() {
     <div>
       <Header />
       <Content />
+      <Footer />
+
+
+
+      Lista da primeira atividade:
       <ol>
         {atividades.map((elemento) => Task(elemento))}
       </ol>
