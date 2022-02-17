@@ -8,21 +8,18 @@ class Pokemon extends Component{
   const {value, measurementUnit} = averageWeight;
 
   return (
-  <div className={id}>
-    <section>
-      <div>
+    <section key={id}>
+      <div className="text-information">
         <p> {name} </p>
         <p> {type} </p>
         <p> Average weight: {value} {measurementUnit}</p>
       </div>
-      <div>
+      <div className="pokemon-gif">
         <img src={image} alt={`${name} gif`}/>
       </div>
     </section>
-  </div>
-)
-  }
-}
+  )}
+};
 
 Pokemon.propTypes = {
   pokemon:PropTypes.shape({
