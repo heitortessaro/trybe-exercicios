@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+  font-family: sans-serif;
+}
+
+main{
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px
+}
+
+.card {
+  border: 2px solid grey;
+  border-radius: 20px;
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.card:hover{
+  box-shadow: 0 0 10px green;
+}
