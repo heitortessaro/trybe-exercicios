@@ -10,3 +10,5 @@ class Pokedex extends Component{
     )
   }
 }
+
+export default Pokedex;
