@@ -83,7 +83,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 ##### Bloco 10: Introdução à React
 
 - [x] 10-1: _Introdução à React_
-- [ ] 10-2: _Componentes React_
+- [x] 10-2: _Componentes React_
 - [ ] 10-3: _[Projeto - Sistema Solar]()_
 
 ##### Bloco 11: IntroduÃ§Ã£o - React
