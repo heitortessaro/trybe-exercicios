@@ -1,6 +1,6 @@
 import data from './data.js';
-// import Pokemon from './Components/Pokemon.jsx';
 import Pokedex from './Components/Pokedex.jsx';
+import './App.css'
 
 function App() {
   return (

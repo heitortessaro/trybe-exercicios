@@ -8,7 +8,7 @@ class Pokemon extends Component{
   const {value, measurementUnit} = averageWeight;
 
   return (
-    <section key={id}>
+    <section className="card" key={id}>
       <div className="text-information">
         <p> {name} </p>
         <p> {type} </p>
