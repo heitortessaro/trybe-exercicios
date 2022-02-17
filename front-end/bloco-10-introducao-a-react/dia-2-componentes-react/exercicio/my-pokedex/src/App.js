@@ -1,8 +1,10 @@
+import data from './data.js';
+import Pokemon from './Components/Pokemon.jsx';
 
 function App() {
   return (
     <div className="App">
-      teste
+      <Pokemon pokemon={data[0]} />
     </div>
   );
 }
