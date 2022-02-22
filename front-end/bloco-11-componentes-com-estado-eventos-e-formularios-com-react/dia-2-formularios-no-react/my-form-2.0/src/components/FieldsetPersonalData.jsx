@@ -1,7 +1,11 @@
 import React, { Component } from "react";
+import stateData from "./stateData"
 
 class FieldsetPersonalData extends Component{
   render () {
+
+
+
     return (
       <fieldset>
         <legend>Personal Data</legend>
@@ -16,7 +20,7 @@ class FieldsetPersonalData extends Component{
         </div>
         <div className="input-form">
           <label htmlFor="cpf">CPF</label>
-          <input type="text" name='cpf' maxLength={11} required/>
+          <input type='text' name='cpf' maxLength={11} required/>
         </div>
         <div className="input-form">
           {/* Remover qualquer caracter especial que seja digitado  */}
@@ -26,7 +30,13 @@ class FieldsetPersonalData extends Component{
         <div className="input-form">
           {/* Ao remover o foco desse campo (evento onBlur ), verificar se o nome da cidade começa com números. Caso comece, limpar o campo.  */}
           <label htmlFor="city">City</label>
-          <input type="text" name='City' maxLength={28} required/>
+          <input type="text" name='city' maxLength={28} required/>
+        </div>
+        <div className="input-form">
+          <label htmlFor="state">State</label>
+          <select type="select" name='state' required>
+            {stateData.map((state) => <option key={state.value} value={state.value}>{state.label}</option>)}
+          </select>
         </div>
 
       </fieldset>
