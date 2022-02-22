@@ -3,9 +3,9 @@ import FieldsetPersonalData from "./FieldsetPersonalData";
 
 class Form extends Component{
   render() {
-
+    const { handleChange } = this.props;
     return(
-      <FieldsetPersonalData/>
+      <FieldsetPersonalData handleChange={handleChange}/>
     );
   }
 }
