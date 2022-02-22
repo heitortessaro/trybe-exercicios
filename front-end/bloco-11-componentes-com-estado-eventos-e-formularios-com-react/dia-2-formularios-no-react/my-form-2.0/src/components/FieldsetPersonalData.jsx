@@ -38,7 +38,13 @@ class FieldsetPersonalData extends Component{
             {stateData.map((state) => <option key={state.value} value={state.value}>{state.label}</option>)}
           </select>
         </div>
-
+        <div className="input-form">
+          <input type="radio" id="apartament" name="house-type" value="house"/>
+          <label htmlFor="apartament">House</label>
+          <br />
+          <input type="radio" id="house" name="house-type" value="apartament"/>
+          <label htmlFor="house">Apartament</label> 
+        </div>
       </fieldset>
     );
   }

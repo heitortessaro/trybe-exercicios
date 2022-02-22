@@ -1,9 +1,9 @@
-import FieldsetPersonalData from "./components/FieldsetPersonalData";
+import Form from "./components/Form";
 
 function App() {
   return (
     <div className="App">
-      <FieldsetPersonalData />
+      <Form />
     </div>
   );
 }
