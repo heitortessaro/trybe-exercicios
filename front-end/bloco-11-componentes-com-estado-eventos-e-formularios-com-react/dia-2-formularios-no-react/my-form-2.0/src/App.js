@@ -20,15 +20,20 @@ class App extends Component {
   handleChange = ({ target }) => {
     const { name } = target;
     let { value } = target;
+    if (name === 'name') value = value.toUpperCase();
     this.setState({
       [name]: value,
     })
   };
 
   render() {
+    // console.log(this.state)
     return (
       <div className="App">
-        <Form handleChange={this.handleChange} />
+        <Form
+          handleChange={this.handleChange}
+          currentState={this.state}
+        />
       </div>
     );
   }

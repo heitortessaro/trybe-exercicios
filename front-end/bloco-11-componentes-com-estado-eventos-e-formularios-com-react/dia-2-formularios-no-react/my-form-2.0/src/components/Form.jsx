@@ -3,9 +3,13 @@ import FieldsetPersonalData from "./FieldsetPersonalData";
 
 class Form extends Component{
   render() {
-    const { handleChange } = this.props;
+    const { handleChange, currentState } = this.props;
+    // console.log(currentState)
     return(
-      <FieldsetPersonalData handleChange={handleChange}/>
+      <FieldsetPersonalData 
+        handleChange={handleChange}
+        currentState={currentState}
+      />
     );
   }
 }

@@ -3,7 +3,12 @@ import stateData from "./stateData"
 
 class FieldsetPersonalData extends Component{
   render () {
-    const { handleChange } = this.props;
+    const { currentState , handleChange } = this.props;
+    const {name,
+    email,
+    cpf,
+    adress,
+    city} = currentState;
     return (
       <fieldset>
         <legend>Personal Data</legend>
@@ -16,6 +21,7 @@ class FieldsetPersonalData extends Component{
             maxLength={40} 
             required 
             onChange={handleChange}
+            value = {name}
           />
         </div>
         <div className="input-form">
@@ -26,6 +32,7 @@ class FieldsetPersonalData extends Component{
             maxLength={50} 
             required 
             onChange={handleChange}
+            value = {email}
           />
         </div>
         <div className="input-form">
@@ -36,6 +43,7 @@ class FieldsetPersonalData extends Component{
             maxLength={11} 
             required
             onChange={handleChange}
+            value = {cpf}
           />
         </div>
         <div className="input-form">
@@ -47,6 +55,7 @@ class FieldsetPersonalData extends Component{
             maxLength={200} 
             required 
             onChange={handleChange}
+            value = {adress}
           />
         </div>
         <div className="input-form">
@@ -58,6 +67,7 @@ class FieldsetPersonalData extends Component{
             maxLength={28} 
             required
             onChange={handleChange}
+            value = {city}
           />
         </div>
         <div className="input-form">
@@ -65,17 +75,30 @@ class FieldsetPersonalData extends Component{
           <select 
             type="select" 
             name='state' 
+            defaultValue=""
             required
             onChange={handleChange}>
-               <option disabled selected value> Select your state </option>
+              <option value=''> Select your state </option>
               {stateData.map((state) => <option key={state.value} value={state.value}>{state.label}</option>)}
           </select>
         </div>
         <div className="input-form">
-          <input type="radio" id="apartament" name="houseType" value="house"/>
+          <input 
+            type="radio" 
+            id="apartament" 
+            name="houseType" 
+            value="house"
+            onChange={handleChange}
+          />
           <label htmlFor="apartament">House</label>
           <br />
-          <input type="radio" id="house" name="houseType" value="apartament"/>
+          <input 
+            type="radio" 
+            id="house" 
+            name="houseType" 
+            value="apartament"
+            onChange={handleChange}
+          />
           <label htmlFor="house">Apartament</label> 
         </div>
       </fieldset>
