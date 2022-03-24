@@ -21,16 +21,16 @@ const reducer = (state = INITIAL_STATE, action) => {
     case NEXT_COLOR:
       return {
         ...state,        
-        index: (state.index >= state.colors.length)
+        index: (state.index >= (state.colors.length - 1))
           ? 0 
-          : state.index + 1,
+          : (state.index + 1),
       };
     case PREVIOUS_COLOR:
       return {
         ...state,        
         index: (state.index <= 0)
-          ? state.colors.length - 1 
-          : state.index - 1,
+          ? (state.colors.length - 1)
+          : (state.index - 1),
       };
     default:
       return state;
@@ -48,6 +48,14 @@ const store = Redux.createStore(
 //    Lendo o estado
 //    GETSTATE | SUBSCRIBE
 
+store.subscribe(() => {
+  const { colors, index} = store.getState();
+  document.getElementById('value').innerHTML = colors[index];
+  document.getElementById('container').style.backgroundColor = `${colors[index]}`;
+})
+
+
+// <====== Adicionando event listeners ======>
 const previusAction = () => {
   store.dispatch({ type: PREVIOUS_COLOR });
 };
@@ -56,7 +64,6 @@ const nextAction = () => {
   store.dispatch({ type: NEXT_COLOR });
 };
 
-// <====== Adicionando event listeners ======>
 const previousColor = document.getElementById('previous');
 const nextColor = document.getElementById('next');
 previousColor.addEventListener('click', previusAction);
