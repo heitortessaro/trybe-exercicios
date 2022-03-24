@@ -9,7 +9,8 @@ const INITIAL_STATE = {
 //    Adicionar REDUX DEVTOOLS
 
 // <====== Lidando com o estado ======>
-// const CHANGE_THEME = 'CHANGE_THEME'
+const NEXT_COLOR = 'NEXT_COLOR';
+const PREVIOUS_COLOR = 'PREVIOUS_COLOR';
 //    Definir as mudanças do estado
 //    ACTIONS 
 
@@ -17,14 +18,14 @@ const INITIAL_STATE = {
 //    REDUCER 
 const reducer = (state = INITIAL_STATE, action) => { 
   switch(action.type) {
-    case 'NEXT_COLOR':
+    case NEXT_COLOR:
       return {
         ...state,        
         index: (state.index >= state.colors.length)
           ? 0 
           : state.index + 1,
       };
-    case 'PREVIOUS_COLOR':
+    case PREVIOUS_COLOR:
       return {
         ...state,        
         index: (state.index <= 0)
@@ -46,3 +47,18 @@ const store = Redux.createStore(
 
 //    Lendo o estado
 //    GETSTATE | SUBSCRIBE
+
+const previusAction = () => {
+  store.dispatch({ type: PREVIOUS_COLOR });
+};
+
+const nextAction = () => {
+  store.dispatch({ type: NEXT_COLOR });
+};
+
+// <====== Adicionando event listeners ======>
+const previousColor = document.getElementById('previous');
+const nextColor = document.getElementById('next');
+previousColor.addEventListener('click', previusAction);
+nextColor.addEventListener('click', nextAction);
+
