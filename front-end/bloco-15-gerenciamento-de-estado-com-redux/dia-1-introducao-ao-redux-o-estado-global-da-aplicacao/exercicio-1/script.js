@@ -11,6 +11,7 @@ const INITIAL_STATE = {
 // <====== Lidando com o estado ======>
 const NEXT_COLOR = 'NEXT_COLOR';
 const PREVIOUS_COLOR = 'PREVIOUS_COLOR';
+const RANDOM_COLOR = 'RANDOM_COLOR';
 //    Definir as mudanças do estado
 //    ACTIONS 
 
@@ -32,6 +33,13 @@ const reducer = (state = INITIAL_STATE, action) => {
           ? (state.colors.length - 1)
           : (state.index - 1),
       };
+    case RANDOM_COLOR:
+      const newColor = criarCor();
+      return {
+        ...state,
+        index: ((state.colors.length)),
+        colors: [...state.colors, newColor],
+      }
     default:
       return state;
   }
@@ -64,8 +72,24 @@ const nextAction = () => {
   store.dispatch({ type: NEXT_COLOR });
 };
 
+const randomAction = () => {
+  store.dispatch({ type: RANDOM_COLOR });
+};
+
 const previousColor = document.getElementById('previous');
 const nextColor = document.getElementById('next');
+const randomColor = document.getElementById('random');
+
 previousColor.addEventListener('click', previusAction);
 nextColor.addEventListener('click', nextAction);
+randomColor.addEventListener('click', randomAction);
 
+function criarCor() {
+  const oneChar = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+  let cor = '#';
+  const aleatorio = () => Math.floor(Math.random() * oneChar.length);
+  for (let i = 0; i < 6; i += 1) {
+      cor += oneChar[aleatorio()];
+  }
+  return cor;
+}
