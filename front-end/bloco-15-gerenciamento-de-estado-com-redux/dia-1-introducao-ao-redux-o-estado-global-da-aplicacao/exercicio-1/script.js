@@ -1,6 +1,6 @@
 //    Definir o estado da aplicação
 //    INITIAL_STATE 
-const ESTADO_INICIAL = {
+const INITIAL_STATE = {
   colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
   index: 0,
 };
@@ -13,14 +13,15 @@ const ESTADO_INICIAL = {
 
 //    Definir como o estado será atualizado
 //    REDUCER 
-// const reducer = (state = INITIAL_STATE, action) => { 
-// }
+const reducer = (state = INITIAL_STATE, action) => { 
+  return state;
+}
 
 //    Ligar nossa STORE ao Reducer
-// const store = Redux.createStore(
-//   reducer,
-//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-// );
+const store = Redux.createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 // <====== Alterando e Lendo o estado ======>
 
