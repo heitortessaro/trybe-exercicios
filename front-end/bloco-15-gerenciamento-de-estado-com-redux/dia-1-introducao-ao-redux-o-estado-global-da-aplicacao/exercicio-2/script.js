@@ -1,4 +1,4 @@
-import { redux, createStore, combineReducers } from 'redux';
+// import { createStore, combineReducers } from 'redux';
 
 const ESTADO_INICIAL_1 = {
   nome: 'Rodrigo',
@@ -58,7 +58,43 @@ const reducerCombinado = combineReducers({
   meuSegundoReducer,
 });
 
-const store = createStore(reducerCombinado);
+const store = createStore(
+  reducerCombinado,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+);
 
+window.onload = () => {
+  setTimeout(() => {
+    store.dispatch({ 
+      type: ALTERA_NOME_1,
+      name: 'Heitor'
+    });
+  }, 3000);
+};
 
+window.onload = () => {
+  setTimeout(() => {
+    store.dispatch({ 
+      type: ALTERA_SOBRENOME_1,
+      name: 'Tessaro'
+    });
+  }, 5000);
+};
 
+window.onload = () => {
+  setTimeout(() => {
+    store.dispatch({ 
+      type: ALTERA_NOME_2,
+      name: 'Tamires'
+    });
+  }, 7000);
+};
+
+window.onload = () => {
+  setTimeout(() => {
+    store.dispatch({ 
+      type: ALTERA_SOBRENOME_2,
+      name: 'Conte'
+    });
+  }, 9000);
+};
