@@ -12,4 +12,11 @@ describe('testing clicks', () => {
     expect(buttonAdicionar).toBeInTheDocument();
     expect(queryByText('0')).toBeInTheDocument();
   });
+  test('a click in a button should increment the value of clicks', () => {
+    const { queryByText } = renderWithRedux(<App />, { initialState: { clickReducer: { counter: 5 }}});
+    const buttonAdd = queryByText('Clique aqui');
+
+    expect(buttonAdd).toBeInTheDocument();
+    expect(queryByText('5')).toBeInTheDocument();
+  });
 });
