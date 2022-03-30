@@ -3,7 +3,7 @@ import { Provider } from 'react-redux'
 import { render } from '@testing-library/react';
 // import App from './App';
 import { createStore, combineReducers } from 'redux';
-import clickReducer from './reducers';
+import clickReducer from '../../reducers/index';
 
 const renderWithRedux = (
   component,
