@@ -8,12 +8,15 @@ import {
   REMOVE_ALL_TASKS,
 } from '../actions/index';
 
-const INITIAL_STATE = { };
+const INITIAL_STATE = { tasks: [] };
 
 export default function reducer(state = INITIAL_STATE, action) {
-  switch (action.state) {
+  switch (action.type) {
     case CREATE_TASK:
-      return state;
+      return {
+        ...state,
+        tasks: [...state.tasks, action.payload],
+      };
     case REMOVE_TASK:
       return state;
     case MOVE_TASK_UP:
