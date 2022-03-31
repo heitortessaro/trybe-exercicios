@@ -20,12 +20,12 @@ class TaskInput extends Component{
   }
 
   saveTask = (task) => {
-    const { createTask, tasksSaved } = this.props;
+    const { createTask, savedTasks } = this.props;
     const newTask = {
       text: task,
       finished: false,
       selected: false,
-      position: tasksSaved.length,
+      position: savedTasks.length,
     }
     console.log(newTask);
     this.setState({
@@ -56,7 +56,7 @@ class TaskInput extends Component{
 }
 
 const mapStateToProps = (state) => ({
-  tasksSaved: state.tasks,
+  savedTasks: state.tasks,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -65,7 +65,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 TaskInput.propTypes = {
   createTask: PropTypes.func.isRequired,
-  tasksSaved: PropTypes.shape({ }).isRequired,
+  savedTasks: PropTypes.shape({ }).isRequired,
 };
 
 export default connect(mapStateToProps,mapDispatchToProps)(TaskInput);
