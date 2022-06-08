@@ -50,4 +50,28 @@ describe('Executa a função numerosNaturais', () => {
       });
     });
   });
+
+  describe('quando o valor fornecido não for do típo numérico', () => {
+    describe('a resposta', () => {
+      it('é uma "string"', () => {
+        const resposta = numerosNaturais('teste');
+        expect(resposta).to.be.a('string');
+      });
+
+      it('é igual a "o valor deve ser um número" para string', () => {
+        const resposta = numerosNaturais('teste');
+        expect(resposta).to.be.equals('o valor deve ser um número');
+      })
+
+      it('é igual a "o valor deve ser um número" para null', () => {
+        const resposta = numerosNaturais(null);
+        expect(resposta).to.be.equals('o valor deve ser um número');
+      })
+
+      it('é igual a "o valor deve ser um número" para undefined', () => {
+        const resposta = numerosNaturais(undefined);
+        expect(resposta).to.be.equals('o valor deve ser um número');
+      })
+    })
+  })
 });
