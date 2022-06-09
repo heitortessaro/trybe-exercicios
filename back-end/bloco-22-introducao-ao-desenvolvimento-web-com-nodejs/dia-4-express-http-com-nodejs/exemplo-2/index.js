@@ -12,22 +12,62 @@ const drinks = [
 
 const recipes = [
   { id: 1, name: 'Lasanha', price: 40.0, waitTime: 30 },
-  { id: 2, name: 'Macarrão a Bolonhesa', price: 35.0, waitTime: 25 },
+  { id: 2, name: 'Macarrão a Bolonhesa', price: 40.0, waitTime: 25 },
   { id: 3, name: 'Macarrão com molho branco', price: 35.0, waitTime: 25 },
 ];
 
+// Todas as Receitas
 app.get('/recipes', function (req, res) {
   res.json(recipes);
 });
 
+// Busca por nome
+// app.get('/recipes/search', function (req, res) {
+//   const { name } = req.query;
+//   const filteredRecipes = recipes.filter((r) => r.name.includes(name));
+//   res.status(200).json(filteredRecipes);
+// });
+
+// Busca por nome e preco máximo
+app.get('/recipes/search', function (req, res) {
+	const { name, maxPrice, minPrice } = req.query;
+	const filteredRecipes = recipes.filter((r) => r.name.includes(name) && r.price < Number(maxPrice) && r.price > Number(minPrice));
+	res.status(200).json(filteredRecipes);
+})
+
+// Todos os Dinks
 app.get('/drinks', function (req, res) {
   res.json(drinks);
 });
 
+// Drinks ordenados alfabeticamente
 app.get('/drinks-sorted', function (req, res) {
   const dinksSort = drinks.sort((a, b) => a.name.localeCompare(b.name))
   res.json(dinksSort);
 });
+
+// Busca por nome e preco máximo
+app.get('/drinks/search', function (req, res) {
+	const { name, maxPrice, minPrice } = req.query;
+  console.log(name, maxPrice, minPrice)
+	const filteredDrinks = drinks.filter((d) => 
+    d.name.includes(name) &&
+    d.price < Number(maxPrice) &&
+    d.price > Number(minPrice));
+	res.status(200).json(filteredDrinks);
+})
+
+// Drink específico
+app.get('/drinks/:id', function (req, res) {
+  const { id } = req.params;
+  const drink = drinks.find((r) => r.id === Number(id));
+
+  if (!drink) return res.status(404).json({ message: 'Recipe not found!'});
+
+  res.status(200).json(drink);
+});
+
+
 
 app.listen(3001, () => {
   console.log('Aplicação ouvindo na porta 3001');
