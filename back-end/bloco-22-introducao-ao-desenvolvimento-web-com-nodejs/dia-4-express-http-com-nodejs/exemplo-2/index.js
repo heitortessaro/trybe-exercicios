@@ -19,21 +19,59 @@ const recipes = [
 ];
 
 // Post para adicionar informações
-app.post('/recipes', function (req, res) {
+// app.post('/recipes', function (req, res) {
+//   const { id, name, price } = req.body;
+//   recipes.push({ id, name, price});
+//   res.status(201).json({ message: 'Recipe created successfully!'});
+// });
+
+// Post para editar informações
+// app.put('/recipes/:id', function (req, res) {
+//   const { id } = req.params;
+//   const { name, price } = req.body;
+//   const recipeIndex = recipes.findIndex((r) => r.id === Number(id));
+
+//   if (recipeIndex === -1) return res.status(404).json({ message: 'Recipe not found!' });
+
+//   recipes[recipeIndex] = { ...recipes[recipeIndex], name, price };
+
+//   res.status(204).end();
+// });
+
+// As funções para adicionar e editar foram recriadas utilizando middleware e next
+
+// valida o nome
+function validateName(req, res, next) {
+  const { name } = req.body;
+  if (!name || name === '') return res.status(400).json({ message: 'Invalid data name!'});
+
+  next();
+};
+
+function validatePrice(req, res, next) {
+  const { price } = req.body;
+  if (!price || price === '') return res.status(400).json({message: 'Invalid data price!'});
+
+  next()
+}
+
+// primeiro faz validação e depois insere dados
+app.post('/recipes', validateName, validatePrice, function (req, res) {
   const { id, name, price } = req.body;
   recipes.push({ id, name, price});
   res.status(201).json({ message: 'Recipe created successfully!'});
 });
 
-// Post para editar informações
-app.put('/recipes/:id', function (req, res) {
+// primeiro faz validação e depois edita dados
+app.put('/recipes/:id', validateName, validatePrice, function (req, res) {
   const { id } = req.params;
   const { name, price } = req.body;
-  const recipeIndex = recipes.findIndex((r) => r.id === Number(id));
+  const recipesIndex = recipes.findIndex((r) => r.id === Number(id));
 
-  if (recipeIndex === -1) return res.status(404).json({ message: 'Recipe not found!' });
+  if (recipesIndex === -1)
+    return res.status(404).json({ message: 'Recipe not found!' });
 
-  recipes[recipeIndex] = { ...recipes[recipeIndex], name, price };
+  recipes[recipesIndex] = { ...recipes[recipesIndex], name, price };
 
   res.status(204).end();
 });
