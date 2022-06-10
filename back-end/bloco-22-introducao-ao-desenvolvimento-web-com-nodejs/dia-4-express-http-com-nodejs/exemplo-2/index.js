@@ -101,6 +101,10 @@ app.get('/drinks/:id', function (req, res) {
   res.status(200).json(drink);
 });
 
+// Retorna mensagem caso rota não exista
+app.all('*', function (req, res) {
+	return res.status(404).json({ message: `Rota '${req.path}' não existe!`});
+});
 
 
 app.listen(3001, () => {
