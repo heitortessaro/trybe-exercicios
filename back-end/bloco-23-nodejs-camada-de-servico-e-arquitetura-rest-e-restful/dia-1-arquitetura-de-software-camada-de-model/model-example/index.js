@@ -53,7 +53,7 @@ app.get('/books', async (_req,res) => {
   res.status(200).json(books);
 })
 
-app.get('/books/author/:id', async(_req, res) => {
+app.get('/books/author/:id', async(req, res) => {
   const { id } = req.params;
   const books = await Book.findByAuthorId(id);
   if (!books) return res.status(404).json({ message: 'Not found'});

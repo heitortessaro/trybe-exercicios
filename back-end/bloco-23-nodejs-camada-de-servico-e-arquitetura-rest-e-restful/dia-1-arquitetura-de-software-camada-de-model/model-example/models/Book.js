@@ -33,12 +33,30 @@ const findById = async (id) => {
 
 // Busca Livros relacionados a um dado author_id
 const findByAuthorId = async (author_id) => {
-  const query = "SELECT id, title, author_id FROM model_example.books WHERE author_id = ?";
+  const query = "SELECT id, title, author_id FROM model_example.books WHERE author_id = ?;";
   const [ books ] = await connection.execute(query, [author_id]);
   if (books.length === 0) return null;
 
   return books.map(serialize);
 }
+
+// valida dados antes da adição ao banco
+const isValid = async (title, author_id) => {
+	if (!title || typeof title !== 'string' || title.length < 3) return false;
+	if (!author_id) return false;
+  
+  const query = 'SELECT id FROM model_example.authors WHERE id = ?;'
+  const [authors] = await connection.execute(query,[author_id]);
+  if (authors.length ===0 ) return false;
+
+	return true;
+};
+
+// adiciona book ao db
+const create = async (title, author_id) => connection.execute(
+	'INSERT INTO model_example.books (title, author_id) VALUES (?,?);',
+	[firstName, middleName, lastName],
+);
 
 module.exports = {
 	getAll,
