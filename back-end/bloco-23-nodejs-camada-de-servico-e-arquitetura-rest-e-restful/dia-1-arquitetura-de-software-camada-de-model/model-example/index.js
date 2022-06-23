@@ -1,5 +1,6 @@
 const express = require('express');
 const Author = require('./models/Author');
+const Book = require('./models/Book');
 
 const app = express();
 app.use(express.json());
@@ -11,6 +12,8 @@ const PORT = process.env.PORT || 3000;
 app.get('/test', (_req, res) => {
   res.status(200).json('message: tudo certo')
 })
+
+// -------- Auhors -------------------
 
 // rota para retornar all authors
 app.get('/authors', async (_req, res) => {
@@ -41,6 +44,14 @@ app.post('/authors', async (req, res) => {
 
 	res.status(201).json({ message: 'Autor criado com sucesso! '});
 });
+
+// -------- books -------------------
+
+app.get('/books', (_req,res) => {
+  const books = await Book.getAll();
+
+  res.status(200).json(books);
+})
 
 app.listen(PORT, () => {
 	console.log(`Ouvindo a porta ${PORT}`);
