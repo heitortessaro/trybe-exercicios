@@ -24,14 +24,14 @@ const findById = async (id) => {
 	// Utilizamos [0] para buscar a primeira linha, que deve ser a única no array de resultados, pois estamos buscando por ID.
 	const { title, authorId } = bookData.map(serialize)[0];
 
-	return getNewAuthor({
+	return {
 		id,
 		title,
 		authorId,
-	});
+	};
 };
-
 
 module.exports = {
 	getAll,
+  findById,
 };
