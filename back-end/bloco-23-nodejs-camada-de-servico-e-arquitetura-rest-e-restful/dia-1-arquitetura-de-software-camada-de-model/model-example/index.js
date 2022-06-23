@@ -47,7 +47,7 @@ app.post('/authors', async (req, res) => {
 
 // -------- books -------------------
 
-app.get('/books', (_req,res) => {
+app.get('/books', async (_req,res) => {
   const books = await Book.getAll();
 
   res.status(200).json(books);
