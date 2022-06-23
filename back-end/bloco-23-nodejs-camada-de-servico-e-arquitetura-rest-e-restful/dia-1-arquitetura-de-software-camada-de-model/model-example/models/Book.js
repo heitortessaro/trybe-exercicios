@@ -55,11 +55,13 @@ const isValid = async (title, author_id) => {
 // adiciona book ao db
 const create = async (title, author_id) => connection.execute(
 	'INSERT INTO model_example.books (title, author_id) VALUES (?,?);',
-	[firstName, middleName, lastName],
+	[title, author_id],
 );
 
 module.exports = {
 	getAll,
   findById,
   findByAuthorId,
+  isValid,
+	create,
 };
