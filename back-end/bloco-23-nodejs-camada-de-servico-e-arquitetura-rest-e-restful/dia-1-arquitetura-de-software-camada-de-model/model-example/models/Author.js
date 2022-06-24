@@ -38,10 +38,7 @@ const findById = async (id) => {
 	// Depois, ao executá-la, informamos um array com o id para o método `execute`.
 	// O `mysql2` vai realizar, de forma segura, a substituição do `?` pelo id informado.
 	const query = 'SELECT first_name, middle_name, last_name FROM model_example.authors WHERE id = ?'
-	const response = await connection.execute(query, [id]);
-  console.log(response);
-  const [ authorData ] = response;
-  console.log(authorData);
+	const [ authorData ] = await connection.execute(query, [id]);
 	if (authorData.length === 0) return null;
 
 	// Utilizamos [0] para buscar a primeira linha, que deve ser a única no array de resultados, pois estamos buscando por ID.
