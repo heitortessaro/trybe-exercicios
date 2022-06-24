@@ -11,9 +11,12 @@ const findById = async (req, res) => {
 
   const author = await Author.findById(id);
 
-  if (!author) return res.status(404).json({ message: 'Author not found' });
+// Caso o service retorne um erro, interrompemos o processamento
+  // e inicializamos o fluxo de erro
+  if (author.error) return next(author.error);
 
-  res.status(200).json(author);
+  // Caso não haja nenhum erro, retornamos o author encontrado
+  return res.status(200).json(author);
 };
 
 const createAuthor = async (req, res) => {
