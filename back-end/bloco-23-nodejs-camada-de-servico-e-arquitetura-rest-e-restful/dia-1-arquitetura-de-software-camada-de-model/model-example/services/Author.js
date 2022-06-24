@@ -43,9 +43,14 @@ const createAuthor = async (firstName, middleName, lastName) => {
 
   if (!validAuthor) return false;
 
-  await Author.create(firstName, middleName, lastName);
+  const [author] = await Author.createAuthor(firstName, middleName, lastName);
 
-  return true;
+  return getNewAuthor({
+    id: author.id,
+    firstName,
+    middleName,
+    lastName,
+  });
 };
 
 module.exports = {

@@ -7,23 +7,22 @@ const serialize = (authorData) => ({
 	middleName: authorData.middle_name,
 	lastName: authorData.last_name});
 
-// Cria uma string com o nome completo do autor
-const getNewAuthor = ({id, firstName, middleName, lastName}) => {
+// Cria uma string com o nome completo da pessoa autora
+const getNewAuthor = (authorData) => {
+  const { id, firstName, middleName, lastName } = authorData;
 
-  // Note que `Boolean` é uma função que recebe um parâmetro e retorna true ou false
-  // nesse caso, se middle_name for `undefined` ou uma string vazia o retorno será `false`
-    const fullName = [firstName, middleName, lastName]
-      .filter(Boolean)
-      .join(' ');
-  
-    return {
+  const fullName = [firstName, middleName, lastName]
+    .filter((name) => name)
+    .join(' ');
+
+  return {
     id,
     firstName,
     middleName,
     lastName,
-    fullName,
-    };
+    name: fullName,
   };
+};
 
 // Busca todas as pessoas autoras do banco.
 const getAll = async () => {
@@ -60,14 +59,17 @@ const isValid = (firstName, middleName, lastName) => {
 	return true;
 };
 
-const create = async (firstName, middleName, lastName) => connection.execute(
-	'INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?,?,?)',
-	[firstName, middleName, lastName],
-);
+const createAuthor = async (firstName, middleName, lastName) => {
+  const [author] = await connection.execute(
+    'INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?, ?, ?)',
+    [firstName, middleName, lastName],
+  );
+  return [getNewAuthor({ id: author.insertId, firstName, middleName, lastName })];
+};
 
 module.exports = {
 	getAll,
   findById,
   isValid,
-	create,
+	createAuthor,
 };
