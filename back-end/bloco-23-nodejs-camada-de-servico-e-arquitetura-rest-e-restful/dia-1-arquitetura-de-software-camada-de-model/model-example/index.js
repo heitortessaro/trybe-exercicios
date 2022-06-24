@@ -4,6 +4,7 @@ const rescue = require('express-rescue');
 // const Author = require('./services/Author');
 const Author = require('./controllers/Author');
 const Book = require('./models/Book');
+const errorMiddleware = require('./middlewares/error');
 
 const app = express();
 app.use(express.json());
@@ -64,6 +65,10 @@ app.post('/books', async (req, res) => {
 });
 
 //-------------------------------------
+
+app.use(errorMiddleware);
+
+// -------------------------------------
 
 app.listen(PORT, () => {
   console.log(`Ouvindo a porta ${PORT}`);
