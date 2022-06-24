@@ -19,7 +19,7 @@ const getNewAuthor = (authorData) => {
 const isValid = (firstName, middleName, lastName) => {
   if (!firstName || typeof firstName !== 'string') return false;
   if (!lastName || typeof lastName !== 'string') return false;
-  if (middleName && typeof middleName !== 'string') return false;
+  if (typeof middleName !== 'string') return false;
 
   return true;
 };
@@ -43,7 +43,7 @@ const createAuthor = async (firstName, middleName, lastName) => {
 
   if (!validAuthor) return false;
 
-  await Author.createAuthor(firstName, middleName, lastName);
+  await Author.create(firstName, middleName, lastName);
 
   return true;
 };
