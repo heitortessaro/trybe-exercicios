@@ -33,7 +33,14 @@ const getAll = async () => {
 const findById = async (id) => {
   const author = await Author.findById(id);
 
-  if (!author) return null;
+  if (!author) {
+    return {
+      error: {
+        code: 'notFound',
+        message: `Não foi possível encontrar uma pessoa autora com o id ${id}`,
+      },
+    };
+  }
 
   return getNewAuthor(author);
 };
