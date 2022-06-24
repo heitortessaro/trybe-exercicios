@@ -7,7 +7,7 @@ const getAll = async (_req, res) => {
   res.status(200).json(authors);
 };
 
-const findById = async (req, res) => {
+const findById = async (req, res, next) => {
   const { id } = req.params;
 
   const author = await Author.findById(id);
