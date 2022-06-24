@@ -43,6 +43,17 @@ const createAuthor = async (firstName, middleName, lastName) => {
 
   if (!validAuthor) return false;
 
+  const existingAuthor = await Author.findByName(firstName, middleName, lastName);
+
+  if (existingAuthor) {
+    return {
+      error: {
+        code: 'alreadyExists',
+        message: 'Uma pessoa autora já existe com esse nome completo',
+      },
+    };
+  }
+
   const [author] = await Author.createAuthor(firstName, middleName, lastName);
 
   return getNewAuthor({
