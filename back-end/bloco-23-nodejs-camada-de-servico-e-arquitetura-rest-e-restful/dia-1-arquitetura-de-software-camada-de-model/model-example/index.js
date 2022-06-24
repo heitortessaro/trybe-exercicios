@@ -1,4 +1,5 @@
 const express = require('express');
+const rescue = require('express-rescue');
 // const Author = require('./models/Author');
 // const Author = require('./services/Author');
 const Author = require('./controllers/Author');
