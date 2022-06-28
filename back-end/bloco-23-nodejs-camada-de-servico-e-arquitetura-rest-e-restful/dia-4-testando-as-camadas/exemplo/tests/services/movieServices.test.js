@@ -1,11 +1,8 @@
 const { expect } = require('chai');
 
-const MoviesService = {
-  create: () => {},
-};
+const MoviesService = require('../../services/movieServices');
 
-/*
-  Precisamos validar se estamos recebendo todos os campos
+/*  Precisamos validar se estamos recebendo todos os campos
   necessários para a operação. Como trata-se de uma regra
   de negócio, validaremos na camada de serviços.
 */
