@@ -1,4 +1,4 @@
 module.exports = {
   include: ['**/*.js'],
-  exclude: ['**/*.{test,spec}.js'],
+  exclude: ['**/*.{test,spec,config}.js'],
 }
