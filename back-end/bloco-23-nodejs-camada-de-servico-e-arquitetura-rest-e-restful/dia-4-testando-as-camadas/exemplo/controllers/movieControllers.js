@@ -1,4 +1,4 @@
-const MoviesService = require('../services/movieService');
+const MoviesService = require('../services/movieServices');
 
 const create = async (req, res) => {
   const { title, directedBy, releaseYear } = req.body;
