@@ -22,4 +22,16 @@ router.post('/', async (req, res) => {
   res.status(201).json(book);
 });
 
+router.put('/:id', async (req, res) => {
+  const { id } = req.params;
+  const { title, author, pageQuantity } = req.body;
+  console.log('aqui');
+  
+  const updatedUser = await BookService.update(id, { title, author, pageQuantity });
+
+  if (!updatedUser) return res.status(404).json({ message: 'Book not found' });
+
+  res.status(201).json({ message: 'Book updated' });
+});
+
 module.exports = router;
