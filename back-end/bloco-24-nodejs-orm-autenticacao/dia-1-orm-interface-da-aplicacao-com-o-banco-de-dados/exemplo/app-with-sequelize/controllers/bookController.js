@@ -34,4 +34,14 @@ router.put('/:id', async (req, res) => {
   res.status(201).json({ message: 'Book updated' });
 });
 
+router.delete('/:id', async (req, res) => {
+  const { id } = req.params;
+
+  const removed = await BookService.remove(id);
+
+  if (!removed) return res.status(404).json({ message: 'Book not found' });
+
+  res.status(200).json({ message: 'Book removed' });
+});
+
 module.exports = router;
