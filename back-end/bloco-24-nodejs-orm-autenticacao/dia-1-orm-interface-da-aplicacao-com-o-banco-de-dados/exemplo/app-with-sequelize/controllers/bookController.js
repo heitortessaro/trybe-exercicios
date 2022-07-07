@@ -15,4 +15,11 @@ router.get('/:id', async (req, res) => {
   res.status(200).json(book);
 });
 
+router.post('/', async (req, res) => {
+  const { title, author, pageQuantity } = req.body;
+  const book = await BookService.create({ title, author, pageQuantity });
+
+  res.status(201).json(book);
+});
+
 module.exports = router;
