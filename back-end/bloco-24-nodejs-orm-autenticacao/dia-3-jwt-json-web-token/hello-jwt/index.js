@@ -26,6 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/login', controllers.login);
 app.get('/ping', controllers.ping);
+app.get('/users/me', middlewares.auth, controllers.me);
 
 app.use(middlewares.error);
 
