@@ -5,6 +5,8 @@ const jwt = require('jsonwebtoken');
 
 const { JWT_SECRET } = process.env;
 
+console.log(JWT_SECRET);
+
 const validateBody = (body) =>
   /* Utilizamos o Joi para validar o schema do body */
   /* Estamos usando o método messages() para customizar as mensagens de erro das validações */
@@ -21,7 +23,7 @@ const validateBody = (body) =>
   }).validate(body);
 
 module.exports = async (req, res, next) => {
-  /* Construímos um schema do Joi */
+   /* Construímos um schema do Joi */
   const { error } = validateBody(req.body);
 
   /* Caso ocorra erro na validação do Joi, passamos esse */

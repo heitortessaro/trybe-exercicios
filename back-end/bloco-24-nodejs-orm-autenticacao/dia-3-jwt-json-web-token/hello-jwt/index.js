@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const morgan = require('morgan');
 
 const { PORT } = process.env;
 
@@ -9,6 +10,8 @@ const controllers = require('./controllers');
 const middlewares = require('./middlewares');
 
 const app = express();
+
+app.use(morgan());
 
 app.use(
   cors({
@@ -21,6 +24,7 @@ app.use(
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.post('/login', controllers.login);
 app.get('/ping', controllers.ping);
 
 app.use(middlewares.error);
