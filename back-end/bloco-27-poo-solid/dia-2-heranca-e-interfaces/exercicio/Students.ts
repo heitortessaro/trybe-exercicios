@@ -67,3 +67,4 @@ console.log(`Média: ${student1.AverageGrades()}`);
 console.log(student2);
 console.log(`Soma das notas: ${student2.sumGrades()}`);
 console.log(`Média: ${student2.AverageGrades()}`);
+
