@@ -1,10 +1,7 @@
 class Student {
   private _enrollment: string;
-
   private _name: string;
-  
   private _examsGrades: number[] = Array();
-  
   private _worksGrades: number[] = Array();
   
 
