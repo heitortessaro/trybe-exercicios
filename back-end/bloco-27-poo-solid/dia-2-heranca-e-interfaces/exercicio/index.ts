@@ -33,18 +33,30 @@
 
 // Part 3
 
-import Employee from './Employee';
+// import Employee from './Employee';
 
-const testInterfaceEmployee: Employee = {
-  registration: 'FNC1234567891011',
-  salary: 1200.00,
-  admissionDate: new Date(),
+// const testInterfaceEmployee: Employee = {
+//   registration: 'FNC1234567891011',
+//   salary: 1200.00,
+//   admissionDate: new Date(),
 
-  generateRegistration(): string {
-    const randomStr = String(Date.now() * (Math.random() + 1)).replace(/\W/g, '');
+//   generateRegistration(): string {
+//     const randomStr = String(Date.now() * (Math.random() + 1)).replace(/\W/g, '');
 
-    return `FNC${randomStr}`;
-  },
-};
+//     return `FNC${randomStr}`;
+//   },
+// };
 
-console.log(testInterfaceEmployee);
+// console.log(testInterfaceEmployee);
+
+//  part 4
+
+import Subject from './Subject';
+
+const math = new Subject('Matemática');
+const story = new Subject('História');
+const philosophy = new Subject('Filosofia');
+
+console.log(math);
+console.log(story);
+console.log(philosophy);
